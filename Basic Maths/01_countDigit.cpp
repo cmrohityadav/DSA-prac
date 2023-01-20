@@ -7,14 +7,22 @@ int main()
     int num;
     cin >> num;
     int count=0;
-    while (num != 0)
-    {
-        num=num/10;
-        count++;
-    }
+    // while (num != 0)
+    // {
+    //     num=num/10;
+    //     count++;
+    // }
     
 
-    cout<<count;
+    // cout<<count;
+
+
+    while (num>0)
+    {
+        num/=10;
+        count++;
+    }
+    cout<<"number of the digit is "<<count<<endl;
 
     return 0;
 }
