@@ -4,12 +4,13 @@ using namespace std;
 int main()
 {
     
-    int arr[5]={1,2,3,4,5};
-    int sum=0;
-    for(int y:arr){
-        sum+=y;
+    int arr[5]={1,2,3,0,-1};
+    int max=arr[0];
+    for(int i=0; i<5;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
     }
-    cout<<sum<<endl;
-
+cout<<"max value is the "<<max;
     return 0;
 }
