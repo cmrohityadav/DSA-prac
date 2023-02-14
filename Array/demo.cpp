@@ -1,19 +1,14 @@
 #include<iostream>
 using namespace std;
+int secondLargest(int arr2,int n){
 
+}
 int main()
 {
     
-    int arr[5]={1,2,3,0,-1};
-    int ans=-1;
-    int key;
-    cin>>key;
-    for(int i=0;i<5;i++){
-        if(arr[i]==key){
-        ans=i;
+   int arr2[]={1,2,3,4,5};
+   int n=5;
+   cout<<secondLargest(arr2,n)<<endl;
 
-        }
-    }
-    cout<<ans;
     return 0;
 }

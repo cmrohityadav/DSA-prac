@@ -34,19 +34,37 @@ cout<<secondLargestElement(array,7);
 }
 int secondLargestElement(int array[],int size){
 
-    int max=INT_MIN;
-    int secondMax=INT_MIN;
-    for(int i=0;i<size;i++){
-        if(array[i]>max){
-            max=array[i];
+    // int max=INT_MIN;
+    // int secondMax=INT_MIN;
+    // for(int i=0;i<size;i++){
+    //     if(array[i]>max){
+    //         max=array[i];
+    //     }
+    // }
+
+    // for(int i=0;i<size;i++){
+    //     if(array[i]>secondMax && array[i]!=max){
+    //          secondMax=array[i];
+    //     }
+    // }
+
+    // return secondMax;
+
+
+
+
+    int result=-1; 
+    int largest=0;
+    for(int i=1; i<size;i++){
+        if(array[i]>array[largest]){
+            result=largest;
+            largest=i;
+        }
+        else if(array[i]!=array[largest]){
+            if(result==-1 || array[i]>array[result]){
+                result=i;
+            }
         }
     }
-
-    for(int i=0;i<size;i++){
-        if(array[i]>secondMax && array[i]!=max){
-             secondMax=array[i];
-        }
-    }
-
-    return secondMax;
+    return result;
 }
