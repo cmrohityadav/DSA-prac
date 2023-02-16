@@ -34,5 +34,13 @@ int main()
     cout<<"front "<<r.front()<<endl;
     cout<<"back =>>"<<r.back()<<endl;
 
+//checking empty or not
+cout<<"is empty or not =>>"<<r.empty()<<endl;
+
+// eraseing 
+cout<<"before erase =>>"<<r.size()<<endl;
+r.erase(r.begin(),r.begin()+1);
+cout<<"After erase =>>"<<r.size()<<endl;
+
     return 0;
 }
