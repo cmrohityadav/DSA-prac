@@ -5,3 +5,12 @@
     ii. Assumption
     iii. Selfwork
 4. space get introduce due to call stack
+5. working of recursion function
+syntax: 
+    methodName(N parameters)
+    {
+        if(haltCondition){
+            resturn result;
+        }
+        return methodName(N parameter)
+    }
