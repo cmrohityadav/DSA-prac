@@ -2,7 +2,7 @@
 # Repeat=until once array is sorted
 # i<n-1 pass
 # j<n-1-i>
-# time complexity=O(n2)
+# time complexity=O(n2) //n square
 # space complexity=O(1)
 
 
