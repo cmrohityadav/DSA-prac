@@ -21,5 +21,8 @@ int main(){
  getline(cin,multipleline);
  cout<<multipleline<<endl;
  
+
+
+ 
     return 0;
 }
