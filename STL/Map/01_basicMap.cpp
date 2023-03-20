@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    //unique key and in sorted order
     map<int,string>m;
 
     // m[key]="value";
