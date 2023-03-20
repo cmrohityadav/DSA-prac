@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {   
-    set<int>s;
+    set<int>s; //sorted and unique element
     
     s.insert(5);
     s.insert(5);
