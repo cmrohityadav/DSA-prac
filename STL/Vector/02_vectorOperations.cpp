@@ -25,7 +25,7 @@ int main()
     cout<<endl;
 
     // inserting element
-    v.insert(v.begin()+2,222); //0=2 position pe 222 a jayega
+    v.insert(v.begin()+2,222); //0+2 position pe 222 a jayega
     
     //printing using forEach lopp
     for(int element:v){
