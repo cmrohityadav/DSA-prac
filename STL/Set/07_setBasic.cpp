@@ -67,13 +67,25 @@ for(auto value:set2){
 }
 
 cout<<endl;
- set2.erase(4);
+//  set2.erase(4);
 
+auto itr2 =set2.begin();
+advance(itr2,3);
+set2.erase(itr2);
 for(auto value:set2){
     cout<<value<<" ";
 }
 
+cout<<endl;
+//search operations
 
+if(set2.find(3)!=set2.end()){
+    cout<<"value is present "<<endl;
+
+}
+else{
+    cout<<"value is not present"<<endl;
+}
 
 
     return 0;
