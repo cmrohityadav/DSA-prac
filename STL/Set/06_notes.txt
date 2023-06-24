@@ -36,5 +36,18 @@ Iterate through stl container
 
 
 
+member function of a set conatainer
+size()
+max_size(): max no. of element set can hold
+empty(): return TRUE if empty else false
+clear(): removes all the element from set
+find(): return position of element if present else return end itarator
+count(): return no of occurrence of the element 
+lower_bound(): return  element if present , else return just greater value
+upper_bound(): return the next greater value
+
+
+
+
 
 
