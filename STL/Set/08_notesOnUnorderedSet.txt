@@ -1,0 +1,6 @@
+Unordered Set
+
+values are stored in Unordered fashion
+unique values ,values will be identified by itself, value cannot be modified inside set
+
+insertion deletion search => avg TC O(1)
