@@ -1,0 +1,7 @@
+Unordered Multiset
+
+allows duplicate valuesvalues are not ordered
+value will be identified by itself
+value cannot be modified
+
+
