@@ -1,0 +1,24 @@
+Inheritance 
+
+a class inherits properties of another class
+class A  ------------------------------------------------> class B
+parent class/super class                                child class/sub class
+
+eg. 
+                    class vehicle
+                    tyre
+                    capacity
+
+
+class car                        class truck                                 class scooter
+typre                            typre                                          typre                              
+capacity                         capacity                                       capacity      
+
+
+
+Access specifiers and modes of Inheritance
+public: data and function -> they can be accessed from anywhere in code
+
+private: 
+
+protected:
