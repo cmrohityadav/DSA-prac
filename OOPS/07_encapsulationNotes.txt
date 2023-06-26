@@ -1,0 +1,8 @@
+Encapsulation
+
+binding of methods and variable together into a single unit(class)
+how?...data is only accessible from the class methods 
+
+also leads to data abstraction/hiding.
+class -> Abstract data type (ADT)
+
