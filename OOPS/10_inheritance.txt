@@ -19,6 +19,23 @@ capacity                         capacity                                       
 Access specifiers and modes of Inheritance
 public: data and function -> they can be accessed from anywhere in code
 
-private: 
+private: acccessble only in own class
 
-protected:
+protected: accessible in own class, parent class and derived class
+
+
+
+
+Type of Inheritance
+1. Single Inheritance:
+2.multi level Inheritance: parent class is derived from another class
+3.multiple Inheritance
+4.hierarchical Inheritance
+5.hybrid Inheritance: combination  0f more than 1 Inheritance types
+
+
+
+Diamond problem?
+base class has multiple parent classes having a common ancestor class
+
+
