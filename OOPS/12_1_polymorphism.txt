@@ -1,0 +1,10 @@
+Polymorphism
+ablity of object or method to take different forms
+
+
+function overloading: 
+define a number of functions with same function name they performs differently according to the arguments passed
+
+Operator Overloading:
+
+
