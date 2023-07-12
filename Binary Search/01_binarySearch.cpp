@@ -11,7 +11,7 @@ int binarySearch(int arr[],int size,int key){
 
     while (start<=end)
     {
-        int mid=(start+end)/2;
+        int mid=start+(end-start)/2;
        if (arr[mid]==key)
        {
         return mid;
@@ -36,9 +36,14 @@ int main()
     int odd[5]={2,4,6,8,12};
 
 int index=binarySearch(odd,5,4);
+int index1=binarySearch(even,6,14);
+int index2=binarySearch(even,6,12);
 
-cout<<"Index of 18 is "<<index<<endl;
-cout<<"rohit";
+cout<<"Index of  is 4"<<index<<endl;
+
+
+cout<<"index of 14 "<<index1<<endl;
+cout<<"index of 12 "<<index2<<endl;
 
 
     return 0;
