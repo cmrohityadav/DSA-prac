@@ -6,7 +6,15 @@ using namespace std;
 int main()
 {
   
-  int num=log10(100);
-  cout<<num;
+   int i=0;
+   while(i<100){
+    if(i==50) break;
+    i++;
+
+
+   }
+
+   cout<<i;
+
     return 0;
 }
