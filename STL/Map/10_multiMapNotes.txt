@@ -1,0 +1,7 @@
+Multimap
+
+1. STL container , stores key value pairs;
+2.element are stored in an ordered (ascending or descending)
+3.duplicate keys are allowed
+4.they are implemented using the Binary search tree(BST)
+

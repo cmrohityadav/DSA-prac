@@ -1,0 +1,14 @@
+Unordered Map
+
+1.STL container , stores key value pair
+2.element are not ordered
+3.keys will be unique
+
+4.insertion
+deletion
+retrieval /search   
+
+TC: O(1)
+
+
+5.implemented using hashmap
