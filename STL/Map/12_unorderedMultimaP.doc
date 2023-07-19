@@ -1,2 +1,25 @@
 Unordered Multimap
-1. STL 
+1. STL  container ,stores key value pair
+2. element are not ordered
+3. duplicate key are allow
+4. implemented using Binary search tree
+    insertion
+    deletion
+    search
+
+    TC: O(1) any case
+        O(n) worst case
+
+5.  insert O(1)
+    erase O(0)
+            range: O(n)
+
+6. find( )  O(1)
+7. count   O(n)
+
+
+
+
+
+
+
