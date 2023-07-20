@@ -1,14 +1,22 @@
 #include<iostream>
 
 using namespace std;
+char toLowerCase(char ch){
 
+    if(ch>='a' && ch<='z'){
+        return ch;
+    }else{
+        char temp=ch-'A'+'a';
+        return temp;
+    }
+}
 
 bool checkPalindrome(char name[],int size){
     int start=0;
     int end=size-1;
     while (start<=end)  
     {
-        if(name[start++]!=name[end--]){
+        if(toLowerCase(name[start++])!=toLowerCase(name[end--])){
             return 0;
         }
 
