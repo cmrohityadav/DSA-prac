@@ -3,9 +3,20 @@ using namespace std;
 
 int main()
 {
-   cout<<'a'+0<<endl;
-   string r="rohit yadav";
-   cout<<"r"<<r[5]<<"y";
+   int a=5;
+
+   cout<<"value of a "<<a<<endl;
+    cout<<"address of a normally  "<<&a<<endl;
+
+   int *prt=&a;
+   cout<<"address of a using pointer "<<prt<<endl;
+
+   cout<<"dereference "<<*prt<<endl;
+
+   int *q=0;
+   q=&a;
+   cout<<q<<" r"<<*q<<endl;
+ cout<<"address of a using pointer "<<q<<endl;
 
 
 
