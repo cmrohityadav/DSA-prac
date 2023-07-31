@@ -3,9 +3,17 @@ using namespace std;
 
 int main()
 {
-  int arr[5]={1,2,4,5,6};
-  arr=arr+1;
-  
-    
+ cout<<"enter the number";
+ int num;
+ cin>>num;
+int fact=1;
+for(int i=1;i<=num;i++){
+
+   fact*=i;
+
+}
+
+cout<<"factorial"<<fact<<endl;
+
     return 0;
 }
