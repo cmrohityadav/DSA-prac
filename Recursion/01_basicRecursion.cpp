@@ -10,7 +10,7 @@ int f(int n){
 
 int main()
 {
-    int result=f(5);
+    int result=f(2);
 
     cout<<result;
 
