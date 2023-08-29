@@ -7,10 +7,11 @@ private:
     int health;
 public:
     char level;
+    char *name;
 
     hero(){
         cout<<"Constructor is called"<<endl;
-
+        name=new char[100];
     }
     //paramerterised constructor
 
@@ -26,6 +27,7 @@ public:
         this->level=temp.level;
     }
     void print(){
+        cout<<"name :"<<this->name<<endl;
         cout<<"health :"<<this->health<<endl;
         cout<<"level :"<<this->level<<endl;
     }
@@ -46,20 +48,22 @@ public:
     }
 
 
+    // Destructor
+    ~hero(){
+        cout<<"destructor bhai called"<<endl;
+    }
+
+
 };
 int main()
 {
-//    hero rahul;
-//    rahul.setHealth(20);
-//    rahul.setLevel('A');
+    //static 
+    hero a;
 
-hero rahul(8,'B');
-
-rahul.print();
-//copy constructor
-hero R(rahul);
-R.print();
-
+    //dynamic
+    hero *b=new hero();
+    // for dynamic munually destructor call
+    delete b;
 
 
    

@@ -9,7 +9,7 @@ public:
     char level;
 
     hero(){
-        cout<<"Constructor is called"<<endl;
+        cout<<" simple Constructor is called"<<endl;
 
     }
 
