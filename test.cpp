@@ -4,33 +4,21 @@ using namespace std;
 int main()
 {
   
-    int rollNo;
-    cout<<"enter your number :";
-    cin>>rollNo;
-    switch(rollNo){
-
-        case 1:
-        cout<<"kajal";
-        cout<<"pagal";
-
-        break;
-
-        case 2:
-        cout<<"lokesh";
-        break;
-
-        case 3:
-        cout<<"rahul";
-        break;
-
-
-        default:
-        cout<<"not valid roll number";
+   
         
 
+    int kajal;
+    float rohit;
+    char koojal;
+    double gunda;
 
 
-    }
+    cout<<sizeof(kajal)<<endl;
+    cout<<sizeof(rohit)<<endl;
+    cout<<sizeof (koojal)<<endl;
+    cout<<sizeof (gunda)<<endl;
+
+    
 
 
 
