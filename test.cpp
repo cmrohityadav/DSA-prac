@@ -4,20 +4,33 @@ using namespace std;
 int main()
 {
   
- 
-cout<<"odd and even number"<<endl;
+    int rollNo;
+    cout<<"enter your number :";
+    cin>>rollNo;
+    switch(rollNo){
 
-int number;
-cin>>number;
+        case 1:
+        cout<<"kajal";
+        cout<<"pagal";
 
-if(number%2==0){
-    cout<<"even is "<<number;
+        break;
 
-}else{
-    cout<<" odd is  "<<number;
+        case 2:
+        cout<<"lokesh";
+        break;
 
-}
+        case 3:
+        cout<<"rahul";
+        break;
 
+
+        default:
+        cout<<"not valid roll number";
+        
+
+
+
+    }
 
 
 
