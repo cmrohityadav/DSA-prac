@@ -5,18 +5,12 @@ int main()
 {
   
    
-        
+       for(int i=0;i<=10;i++){
 
-    int kajal;
-    float rohit;
-    char koojal;
-    double gunda;
+        cout<<i<<endl;
+       }
 
-
-    cout<<sizeof(kajal)<<endl;
-    cout<<sizeof(rohit)<<endl;
-    cout<<sizeof (koojal)<<endl;
-    cout<<sizeof (gunda)<<endl;
+  
 
     
 
