@@ -3,23 +3,27 @@ using namespace std;
 
 int main()
 {
-    cout<<"enter the table of which  you want"<<endl;
-    int pahada;
-    cin>>pahada;
-    cout<<"kitne tak chahiye"<<endl;
-    int kitneTakChahiye;
-    cin>>kitneTakChahiye;
-
-
-    for(int i=1;i<=kitneTakChahiye;i++){
-        cout<<pahada*i<<endl;
-
+    for(int counter=1;counter<10;counter++){
+          cout<<"vs code : "<<counter<<endl;
 
     }
 
-  
-   
 
+cout<<"from here while loop is running"<<endl;
+
+    int counter=1;
+    while (counter<10)
+    {
+          cout<<"vs code : "<<counter<<endl;
+
+
+        counter++;
+    }
+    
+
+
+
+    
   
 
     
