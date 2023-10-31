@@ -14,5 +14,6 @@ int main()
     cout<<"Area of the circle "<<area<<endl;
 
     cout<<"area of macro"<<areaM(5,5)<<endl;
+    
     return 0;
 }
