@@ -1,0 +1,1 @@
+C++isageneral-purposeprogramminglanguageandiswidelyusednowadaysfor competitiveprogramming.Ithasimperative,object-oriented,andgenericprogramming features.C++runsonlotsofplatformslikeWindows,Linux,Unix,Mac,etc.Itcanbe usedtodevelopoperatingsystems,browsers,games,andsoon.ThismakesC++ powerful as well as flexible.
