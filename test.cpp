@@ -6,7 +6,7 @@ int main(){
     int num;
     cin>>num;
     int revNum=0;
-
+    int orgNum=num;
     while(num>0){
 
         int lastDigit=num%10;
@@ -14,7 +14,11 @@ int main(){
         num/=10;
 
     }
-    cout<<revNum;
+if(orgNum==revNum){
+    cout<<"palindrome number";
+}else{
+    cout<<"not palindrome number";
+}
 
 
     return 0;
