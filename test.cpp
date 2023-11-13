@@ -3,22 +3,16 @@
 using namespace std;
 
 int main(){
-    int num;
-    cin>>num;
-    int revNum=0;
-    int orgNum=num;
-    while(num>0){
+   int num;
+   cin>>num;
+   int fact=1;
 
-        int lastDigit=num%10;
-        revNum=revNum*10+lastDigit;
-        num/=10;
+   for(int i=1;i<=num;i++){
 
-    }
-if(orgNum==revNum){
-    cout<<"palindrome number";
-}else{
-    cout<<"not palindrome number";
-}
+    fact*=i;
+
+   }
+   cout<<fact<<endl;
 
 
     return 0;
