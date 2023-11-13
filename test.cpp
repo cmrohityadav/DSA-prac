@@ -1,36 +1,21 @@
 #include<iostream>
+
 using namespace std;
 
-int main()
-{
-    for(int counter=1;counter<10;counter++){
-          cout<<"vs code : "<<counter<<endl;
+int main(){
+    int num;
+    cin>>num;
+    int revNum=0;
+
+    while(num>0){
+
+        int lastDigit=num%10;
+        revNum=revNum*10+lastDigit;
+        num/=10;
 
     }
+    cout<<revNum;
 
 
-cout<<"from here while loop is running"<<endl;
-
-    int counter=1;
-    while (counter<10)
-    {
-          cout<<"vs code : "<<counter<<endl;
-
-
-        counter++;
-    }
-    
-
-
-
-    
-  
-
-    
-
-
-
-
-   
     return 0;
 }
