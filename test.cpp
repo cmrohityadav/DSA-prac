@@ -3,16 +3,23 @@
 using namespace std;
 
 int main(){
-   int num;
-   cin>>num;
-   int fact=1;
+   
+    int row,col;
+    cin>>row>>col;
 
-   for(int i=1;i<=num;i++){
 
-    fact*=i;
+    for(int i=1;i<=row;i++){
 
-   }
-   cout<<fact<<endl;
+        for(int j=1;j<=col;j++){
+
+            if(i==1 || j==1 || i==row || j==col){
+                cout<<"*"<<" ";
+            }else{
+                cout<<"  ";
+            }
+        }
+        cout<<endl;
+    }
 
 
     return 0;
