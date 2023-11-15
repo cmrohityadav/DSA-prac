@@ -4,23 +4,16 @@ using namespace std;
 
 int main(){
    
-    int row,col;
-    cin>>row>>col;
+    int arr[]={1,2,3,4,5};
 
+    int sum=0;
 
-    for(int i=1;i<=row;i++){
+    for(int i=0;i<5;i++){
 
-        for(int j=1;j<=col;j++){
-
-            if(i==1 || j==1 || i==row || j==col){
-                cout<<"*"<<" ";
-            }else{
-                cout<<"  ";
-            }
-        }
-        cout<<endl;
+        sum+=arr[i];
     }
 
+    cout<<"sum "<<sum;
 
     return 0;
 }
