@@ -7,7 +7,7 @@ int findUnique(vector<int>arr){
     int ans=0;
 
     for(auto ele:arr){
-        ans=ans^ele;
+        ans=ans^ele; //imp point use xor
     }
      return ans;
 }
