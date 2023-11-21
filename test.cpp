@@ -11,15 +11,14 @@ int main(){
     int right=size-1;
 
     while(left<=right){
-      if(left==right){
-        cout<<arr[left];
-        break;
-      }
+       swap(arr[left],arr[right]);
+       left++;
+       right--;
 
-      cout<<arr[left]<<" "<<arr[right]<<" ";
-      left++;
-      right--;
     }
+    for(int i=0;i<size;i++) cout<<arr[i]<<" ";
+
+    
 
 
 
