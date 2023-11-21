@@ -4,40 +4,24 @@ using namespace std;
 
 int main(){
   
+    int arr[11]={1,5,8,7,9,14,57,65,34,69,2};
+  int size=11;
 
-  int arr[100],size,num,sub;
-  cin>>size;
-  
+    int left=0;
+    int right=size-1;
 
-  for(int i=0;i<size;i++){
-
-    cin>>arr[i];
-  }
-
-cin>>sub;
-cin>>num;
-bool flag=false;
-  for(int i=0;i<size;i=i+sub){
-
-    for(int j=i;j<=sub;j++){
-
-        if(arr[j]==num){
-            flag=true;
-
-        }
-    }
-    if(flag==false){
-        cout<<"0";
+    while(left<=right){
+      if(left==right){
+        cout<<arr[left];
         break;
+      }
+
+      cout<<arr[left]<<" "<<arr[right]<<" ";
+      left++;
+      right--;
     }
 
 
-
-
-
-
-  }
-  if(flag==true) cout<<"1";
 
     return 0;
 }
