@@ -6,6 +6,7 @@
         "system_error": "cpp",
         "type_traits": "cpp",
         "vector": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "algorithm": "cpp"
     }
 }
