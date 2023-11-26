@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 int firstOcc(vector<int>v,int target){
@@ -38,7 +39,11 @@ int main()
     int target=4;
 
     int index=firstOcc(v,target);
-    cout<<index;
+    cout<<index<<endl;
 
+    cout<<"using inbuilt function"<<endl;
+    auto value=lower_bound(v.begin(),v.end(),target);
+     cout<<value-v.begin()<<endl;
+     
     return 0;
 }

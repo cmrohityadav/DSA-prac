@@ -1,0 +1,1 @@
+cout<<value-v.begin()<<endl;;
