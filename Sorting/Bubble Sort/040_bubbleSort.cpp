@@ -12,13 +12,18 @@ int main()
     int n=v.size();
 
     for(int i=0;i<n-1;i++){
+        bool flag=false;
 
         for(int j=0;j<n-1-i;j++){
 
             if(v[j]>v[j+1]){
+                flag=true;
 
                 swap(v[j],v[j+1]);
             }
+        }
+        if(flag==false){
+            break;
         }
     }
 
