@@ -10,7 +10,7 @@ int main()
     cout<<&x<<endl; //retriving the address of x
     cout<<&y<<endl; //retriving the address of x
 
-    // int c=&x; =>>we cant store adrress of variable in normal variable
+    // int c=&x; =>>we can't store adrress of variable in normal variable
     int *ptrX=&x;
     // int *ptrY=&y;//wrong
     float *ptrY=&y;
