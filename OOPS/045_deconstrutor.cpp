@@ -1,13 +1,7 @@
 #include<iostream>
 using namespace std;
 /*
-constructor : 1. object inialize
-2. no return type
-3. name same as class
-4. yeh object k bante ki run ho jata hai(apne aap call ho jata hai)
-5. bydefault bhi rhta hai but uski kuchh value nhi rhti hai
-6. jab hum constructor khud ka bante hai to bydefault wala die ho jata hai
-7. its used to initialize data members values
+
 */
 class Animal{
     private:
@@ -17,6 +11,8 @@ class Animal{
 
     int age;
     string type;
+
+
     ~Animal(){
         cout<<" i am inside the destructor"<<endl;
     }
