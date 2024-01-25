@@ -97,7 +97,7 @@ void insertAtPosition(Node* &head,Node* &tail,int position,int data){
         }
 
         int len=getLength(head);
-        if(position>=len){
+        if(position>len){
             insertAtTail(head,tail,data);
             return;
         }
@@ -110,6 +110,16 @@ void insertAtPosition(Node* &head,Node* &tail,int position,int data){
             prevNode=prevNode->next;
             i++;
         }
+        Node* curr=prevNode->next;
+        // step 2 create a node
+        Node* newNode=new Node(data);
+
+        // step 3 :
+        prevNode->next=newNode;
+        newNode->prev=prevNode;
+        curr->prev=newNode;
+        newNode->next=curr;
+
 
     }
 }
@@ -131,6 +141,12 @@ Node* tail=third;
     cout<<endl;
     insertAtTail(head,tail,101);
     insertAtTail(head,tail,102);
+    insertAtTail(head,tail,103);
+    insertAtTail(head,tail,104);
     print(head);
+    cout<<endl;
+    insertAtPosition(head,tail,5,40);
+    print(head);
+
     return 0;
 }
