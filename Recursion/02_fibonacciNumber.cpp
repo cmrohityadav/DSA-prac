@@ -3,8 +3,13 @@ using namespace std;
 int fib(int n){
     //base case
     if(n==0 || n==1) return n;
-    
-    return fib(n-1)+fib(n-2);
+
+    /*
+    assumption fib(n-1) and fib(n-2)
+    */
+
+
+    return fib(n-1)+fib(n-2); //self work
 }
 int main()
 {
