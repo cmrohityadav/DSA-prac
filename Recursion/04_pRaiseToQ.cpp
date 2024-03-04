@@ -10,7 +10,7 @@ int pRaiseToQ(int p,int q){
 int main(){
 
 
-        int result=pRaiseToQ(3,2);
+        int result=pRaiseToQ(3,10);
         cout<<result<<endl;
 
     return 0;
