@@ -6,7 +6,7 @@ int pRaiseToQ(int p,int q){
     if(q==0) return  1;
 
     return pRaiseToQ(p,--q)*p;
-}
+} 
 int main(){
 
 
