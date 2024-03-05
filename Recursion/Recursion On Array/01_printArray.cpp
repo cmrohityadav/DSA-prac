@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
 void  printArray(int arr[],int idx,int size){
-    cout<<arr[idx]<<" ";
 
-    if( idx==(size-1) || size==1) return;
+
+    if(idx==size) return;
+    cout<<arr[idx]<<" ";
      return printArray(arr,++idx,size);
 
 
