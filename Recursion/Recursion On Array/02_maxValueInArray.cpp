@@ -17,7 +17,8 @@ int main()
     
     int arr[5]={0,10,2,3,8};
     int max=INT_MIN;
-   int result= maxValue(arr,0,5,max);
+    int size=5;
+   int result= maxValue(arr,0,size,max);
 
    cout<<"result: "<<result<<endl;
 
