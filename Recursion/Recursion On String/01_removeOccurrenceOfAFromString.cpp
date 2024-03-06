@@ -1,22 +1,17 @@
 #include<iostream>
 using namespace std;
-string removeA(string s,int idx,string &a){
-    
-    if(idx==s.length()){
-        return a;
-    }
+string removeA(string &s,int idx,int size){
+    if(idx==size) return "";
 
-    if(s[idx]!='a'){
-        a.push_back(s[idx]);
-    }
-    return removeA(s,++idx,a);
-
+    string currentChar="";
+    currentChar+=s[idx];
+     return ((s[idx]=='a')? "":currentChar)+ removeA(s,idx+1,size);
 }
 int main()
 {
     string s="rahul";
-    string a="";
-   string result =removeA(s,0,a);
+    int size=5;
+   string result =removeA(s,0,size);
    cout<<"result: "<<result<<endl;
     return 0;
 }
