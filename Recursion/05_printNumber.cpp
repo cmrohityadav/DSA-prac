@@ -2,10 +2,13 @@
 using namespace std;
 void printNumber(int num){
 
-    if(num==0)return;
+  
+    if(num<1) return;
 
+    printNumber(num-1); 
     cout<<num<<" ";
-    return printNumber(--num);
+    return;
+    
 }
 int main()
 {
