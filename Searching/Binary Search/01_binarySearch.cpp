@@ -1,20 +1,26 @@
 #include <iostream>
 using namespace std;
-
-// function
 /*
-Time:O(logn)
+Time: O(logn)
 Space: O(1)
 */
+/*
+mid=start+end/2 
+=> (start+end+start-start)/2
+=> ((start+start)+(end-start))/2
+=> (2start+(end-start))/2
+=> start+(end-start)/2
+*/
+
 int binarySearch(int arr[], int size, int key)
 {
 
     int start = 0;
     int end = size - 1;
-
+    int mid = start + (end - start) / 2;
     while (start <= end)
     {
-        int mid = start + (end - start) / 2;
+        mid = start + (end - start) / 2;
         if (arr[mid] == key)
         {
             return mid;
@@ -42,10 +48,10 @@ int main()
     int index1 = binarySearch(even, 6, 14);
     int index2 = binarySearch(even, 6, 12);
 
-    cout << "Index of  is 4" << index << endl;
+    cout << "Index of  is 4 :" << index << endl;
 
-    cout << "index of 14 " << index1 << endl;
-    cout << "index of 12 " << index2 << endl;
+    cout << "index of 14 :" << index1 << endl;
+    cout << "index of 12 :" << index2 << endl;
 
     return 0;
 }
