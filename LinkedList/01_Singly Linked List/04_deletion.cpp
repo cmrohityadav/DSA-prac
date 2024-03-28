@@ -85,6 +85,28 @@ void deletionAtTail(Node* &head){
 
     
 }
+
+void deleteAtAnyPosition(Node *&head,int position){
+
+    if(position==0){
+        deleteAtHead(head);
+        return;
+
+    }
+
+    int currentPosition=0;
+    Node* prev=head;
+     
+     while(currentPosition!=position-1){
+        prev=prev->next;
+        currentPosition++;
+    }
+    // prev is pointing to node at position-1
+    Node* temp=prev->next; // node to be deleted
+    prev->next=prev->next->next;
+    free(temp);
+
+}
 int main(){
 
     Node* head=NULL;
@@ -97,13 +119,24 @@ int main(){
     insertAtTail(head,20);
     insertAtTail(head,30);
     insertAtTail(head,40);
+    insertAtTail(head,50);
+    insertAtTail(head,60);
     display(head);
 
-
+// head
     deleteAtHead(head);
     display(head);
+
+// tail
     deletionAtTail(head);
     display(head);
+
+// any position
+    deleteAtAnyPosition(head,3);
+    display(head);
+
+
+
 
    
 
