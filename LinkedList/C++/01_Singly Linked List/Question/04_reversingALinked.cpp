@@ -44,6 +44,6 @@ class LinkedList{
 };
 int main(){
 
-
+    LinkedList sl;
     return 0;
 }
