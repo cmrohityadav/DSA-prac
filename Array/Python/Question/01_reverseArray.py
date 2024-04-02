@@ -1,15 +1,10 @@
-def reverseArray(arr):
-    size = len(arr)
-    start = 0
-    end = size - 1
-    while start <= end:
-        temp = arr[start]
-        arr[start] = arr[end]
-        arr[end] = temp
-        start += 1
-        end -= 1
-    for i in arr:
-        print(i, end=" ")
+def reverseArray(array):
+    reversedArray=array[::-1]
 
-originalArray = [1, 2, 3, 4, 5]
-reverseArray(originalArray)
+    print("reversed array")
+    for i in reversedArray:
+        print(i,end=" ")
+
+
+orignalArray=[1,2,3,4,5]
+reverseArray(orignalArray)
