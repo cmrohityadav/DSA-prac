@@ -58,6 +58,7 @@ int main()
     sl.insertAtTail(40);
     sl.print();
    reverseTraversalPrint(sl.head);
+   
 
     return 0;
 }
