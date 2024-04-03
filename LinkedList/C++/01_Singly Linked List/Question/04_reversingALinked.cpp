@@ -42,8 +42,31 @@ class LinkedList{
 
     
 };
+
+Node * reverseSL(Node* &head){
+    Node* prev=NULL;
+    Node * curr=head;
+    while(curr!=NULL){
+        Node* next=curr->next;
+        curr->next=prev;
+
+        // go one step ahead
+        prev=curr;
+        curr=next;
+
+    }
+
+    return prev ; //ab yeh head ho chuki hai
+}
 int main(){
 
     LinkedList sl;
+    sl.insertAtTail(10);
+    sl.insertAtTail(20);
+    sl.insertAtTail(30);
+    sl.insertAtTail(40);
+    sl.print();
+    sl.head=reverseSL(sl.head);
+    sl.print();
     return 0;
 }
