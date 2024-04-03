@@ -1,4 +1,11 @@
-list=[1,8,6,5,9,2,7,6,8]
+def maxMin(list):
+    list.sort()
+    print(list)
+    min=list[0]
+    max=list[-1]
+    return [min,max]
 
+list=[1,2,5,4,7,8,6,5,4,2]
 list.sort()
-print(f"min value :{list[0]} Max value: {list[-1]}")
+
+print(maxMin(list))
