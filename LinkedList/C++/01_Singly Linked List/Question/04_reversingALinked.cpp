@@ -44,19 +44,18 @@ class LinkedList{
 };
 
 Node * reverseSL(Node* &head){
-    Node* prev=NULL;
-    Node * curr=head;
-    while(curr!=NULL){
-        Node* next=curr->next;
-        curr->next=prev;
+    
+    if(head==NULL || head->next==NULL) return head;
+    
+    Node* newhead=reverseSL(head->next);
+    head->next->next=head;
+    head->next=NULL;
 
-        // go one step ahead
-        prev=curr;
-        curr=next;
+    return newhead;
 
-    }
 
-    return prev ; //ab yeh head ho chuki hai
+
+
 }
 int main(){
 
