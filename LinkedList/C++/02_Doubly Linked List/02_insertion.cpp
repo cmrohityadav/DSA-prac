@@ -32,7 +32,21 @@ class DoublyLinkedList{
         cout<<endl;
     }
 
-    
+    void insertAtStart(int val){
+        Node * newNode=new Node(val);
+        if(tail==NULL){
+            head=newNode;
+            tail=newNode;
+            return;
+        }
+
+        newNode->next=head;
+        head->prev=newNode;
+        head=newNode;
+
+        return;
+
+    }
 
     void insertAtTail(int val){
         Node* newNode=new Node(val);
