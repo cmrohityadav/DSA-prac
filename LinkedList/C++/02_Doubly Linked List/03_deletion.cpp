@@ -81,7 +81,7 @@ public:
         Node *temp = tail;
         tail=tail->prev;
         if(temp==NULL){
-            head=NULL;
+           head=NULL;
         }else{
             tail->next=NULL;
         }
@@ -89,6 +89,25 @@ public:
         free(temp);
 
         return;
+    }
+
+    void deleteAtAnyPosition(int position){
+        if(head==NULL){
+            return;
+        }
+        int count=0;
+        Node* temp=head;
+        while(count!=position){
+            temp=temp->next;
+            count++;
+        }
+
+        temp->prev->next=temp->next;
+        temp->next->prev=temp->prev;
+        free(temp);
+        return;
+
+
     }
 };
 
@@ -115,6 +134,18 @@ int main()
     dll2.print();
     dll2.deletionAtTail();
     dll2.print();
+    cout << "deletion at any position" << endl;
+    DLL dll3;
+    dll3.insertAtTail(1000);
+    dll3.insertAtTail(2000);
+    dll3.insertAtTail(3000);
+    dll3.insertAtTail(4000);
+    dll3.insertAtTail(5000);
+    dll3.insertAtTail(6000);
+    dll3.print();
+    dll3.deleteAtAnyPosition(2);
+    dll3.print();
+
 
 
     return 0;
