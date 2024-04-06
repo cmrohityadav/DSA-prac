@@ -79,8 +79,16 @@ public:
             return;
         }
         Node *temp = tail;
-        temp->prev->next=NULL;
+        tail=tail->prev;
+        if(temp==NULL){
+            head=NULL;
+        }else{
+            tail->next=NULL;
+        }
+
         free(temp);
+
+        return;
     }
 };
 
