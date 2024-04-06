@@ -54,19 +54,33 @@ public:
 
     void deletionAtHead()
     {
-        if(head==NULL){
+        if (head == NULL)
+        {
             return;
         }
         Node *temp = head;
         head = head->next;
-        if(head==NULL){
-            tail=NULL;
-        }else {
+        if (head == NULL)
+        {
+            tail = NULL;
+        }
+        else
+        {
             head->prev = NULL;
-       
-        } 
+        }
         free(temp);
         return;
+    }
+
+    void deletionAtTail()
+    {
+        if (head == NULL)
+        {
+            return;
+        }
+        Node *temp = tail;
+        temp->prev->next=NULL;
+        free(temp);
     }
 };
 
@@ -84,6 +98,15 @@ int main()
     dll.deletionAtHead();
     dll.print();
 
+    cout << "deletion at end" << endl;
+    DLL dll2;
+    dll2.insertAtTail(100);
+    dll2.insertAtTail(200);
+    dll2.insertAtTail(300);
+    dll2.insertAtTail(400);
+    dll2.print();
+    dll2.deletionAtTail();
+    dll2.print();
 
 
     return 0;
