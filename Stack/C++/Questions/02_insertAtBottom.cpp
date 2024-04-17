@@ -19,6 +19,19 @@ void insertAtBottom(stack<int>&st1,int x){
     }
 
 }
+
+void insertAtBottomUsingRecursion(stack<int>&st2,int x){
+    if(st2.empty()){
+        st2.push(x);
+        return;
+    }
+
+    int currentElement=st2.top();
+    st2.pop();
+    insertAtBottomUsingRecursion(st2,x);
+    st2.push(currentElement);
+
+}
 int main(){
 
     stack<int>st1;
@@ -34,6 +47,17 @@ int main(){
         st1.pop();
     }
     
+    cout<<"using recursion"<<endl;
+    stack<int>st2;
+    st2.push(10);
+    st2.push(20);
+    st2.push(30);
+  
+    insertAtBottomUsingRecursion(st2,500);
+    while(!st2.empty()){
+        cout<<st2.top()<<endl;
+        st2.pop();
+    }
 
 
     return 0;
