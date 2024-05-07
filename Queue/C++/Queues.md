@@ -22,3 +22,5 @@ gives us the element which come first
 ### Circular
 ### Double ended Queue / dequeue
 
+# Double enend queue (Deque) dekk
+ we can add or remove elements from both sides
