@@ -20,7 +20,7 @@ int main()
 cout<<"\n\n"<<endl;
 
 
-    //size remains same bcz duplicate value is adde
+    //size remains same bcz duplicate value is added
     //and sets contains only unique values
 
     //iterator for traversing a set
@@ -77,6 +77,9 @@ for(auto value:set2){
 }
 
 cout<<endl;
+
+
+
 //search operations
 
 if(set2.find(3)!=set2.end()){
