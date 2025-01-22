@@ -3,7 +3,7 @@ using namespace std;
 
 int fact(int iNum){
 
-    if(iNum==1){
+    if(iNum<=1){
         return 1;
     }
    return iNum*fact(iNum-1);
@@ -11,6 +11,6 @@ int fact(int iNum){
 }
 int main()
 {
-    cout<<fact(4);
+    cout<<fact(5);
     return 0;
 }
