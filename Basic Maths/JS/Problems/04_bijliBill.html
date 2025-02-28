@@ -1,0 +1,56 @@
+<!-- /**
+ * unit      price
+ * upto 100     4.2/unit
+ * 101-200      6/unit
+ * 201-400      8/unit
+ * >400         13/unit
+ * 
+ * 
+ */ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijli Bill</title>
+
+</head>
+
+<body>
+    <pre>
+        * unit      price
+        * upto 100     4/unit
+        * 101-200      6/unit
+        * 201-400      8/unit
+        * >400         13/unit
+        use bottom to top approach
+    </pre>
+    <script>
+
+        let iUnit = Number(prompt("Enter electricity unit"))
+
+        iSumAmount = 0;
+
+        if (iUnit > 400) {
+            iSumAmount = (iUnit - 400) * 13
+            iUnit = 400;
+        }
+        if (iUnit > 200 && iUnit <= 400) {
+            iSumAmount += (iUnit - 200) * 8;
+            iUnit=200;
+        }
+        if(iUnit>100 && iUnit<=200){
+            iSumAmount+=(iUnit-100)*6;
+            iUnit=100;
+        }
+        iSumAmount+=iUnit*4
+
+        console.log(iSumAmount)
+
+
+    </script>
+</body>
+
+</html>
