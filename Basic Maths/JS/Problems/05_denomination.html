@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes paisa</title>
+</head>
+<body>
+    <script>
+        iAmount=Number(prompt("Enter Amount"))
+        iNumOfCurrency=0;
+        if(iAmount>=500){
+            iNumOfCurrency=Math.trunc( iAmount/500);
+            iAmount-=500*iNumOfCurrency
+        }
+        if(iAmount>=200){
+            let iTemp=Math.trunc( iAmount/200);
+            iNumOfCurrency+=iAmount/200;
+            iAmount-=200*iTemp
+        }
+        if(iAmount>=100){
+            let iTemp=Math.trunc( iAmount/100);
+            iNumOfCurrency+=Math.trunc( iAmount/100);
+            iAmount-=100*iTemp
+        }
+        if(iAmount>=50){
+            let iTemp=Math.trunc( iAmount/50);
+            iNumOfCurrency+=Math.trunc( iAmount/50);
+            iAmount-=50*iTemp
+        }
+        if(iAmount>=20){
+            let iTemp=Math.trunc( iAmount/20);
+            iNumOfCurrency+=Math.trunc( iAmount/20);
+            iAmount-=20*iTemp
+        }
+        if(iAmount>=10){
+            let iTemp=Math.trunc( iAmount/10);
+            iNumOfCurrency+=Math.trunc( iAmount/10);
+            iAmount-=10*iTemp
+        }
+
+        console.log(iNumOfCurrency)
+    </script>
+</body>
+</html>
