@@ -3,7 +3,7 @@
 
 let n="3q"
 n=Number(n);
-if(isNaN){
+if(isNaN(n)){
     console.log("Enter number only")
     return
 
