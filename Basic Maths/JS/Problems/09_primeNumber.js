@@ -3,7 +3,7 @@
  * 
  */
 
-let num=9;
+let num=11;
 
 if(num<2){
     console.log("Enter number more than 1")
@@ -17,4 +17,14 @@ if(num<2){
     }
 
     primeHai?console.log("prime"):console.log("not prime")
+}
+console.log(isPrime(num))
+function isPrime(num){
+    if(num<=1) return false;
+    if(num===2) return true;
+    if(num%2===0) return false;
+    for(let i=3;i<=Math.floor(Math.sqrt(num));i+=2){
+        if(num%i===0) return false;
+    }
+    return true;
 }
