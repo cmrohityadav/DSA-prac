@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+</head>
+<body>
+    <script>
+        document.writeln("Guess Number (0-100)")
+        let random=Math.floor((Math.random()*100)+1)
+
+        let userGuess=-1;
+        while(userGuess!=random){
+            userGuess=Number(prompt("Guess number"))
+            if(isNaN(userGuess)|| userGuess<1 || userGuess>100){
+                alert("Try again (1-100)")
+                continue;
+            }
+            if (userGuess>random){
+                alert("Too high,...Try again")
+
+            }else if(userGuess<random){
+                alert("Too low,...Try again")
+
+            }else{
+                alert("Congrats")
+            }
+
+        }
+       
+    </script>
+</body>
+</html>
