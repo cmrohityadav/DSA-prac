@@ -1,4 +1,4 @@
-// 1st level optimised: brute force solution
+/*  // 1st level optimised: brute force solution
 
 let arr=[0,1,2,3,4,5,6];
 
@@ -14,7 +14,7 @@ for(let i=1;i<=k;i++){
 console.log(arr)
 
 
-
+*/
 
 /* // 2nd level optimised
 
@@ -41,3 +41,58 @@ console.log(arr)
 console.log("counter: ",countOuterLopp)
 
 */
+
+/*
+ //3rd level: optimse but using extra space
+
+let arr=[0,1,2,3,4,5,6];
+k=2;
+
+k=k%arr.length;
+console.log("k ", k)
+let tempArr=Array(arr.length)
+
+for(let i=0;i<arr.length;i++){
+    tempArr[i]=arr[(i+k)%arr.length]
+}
+console.log(tempArr)
+
+*/
+
+
+
+
+//4th level 
+
+let arr=[0,1,2,3,4,5]
+let k=2
+reverse(0,k-1)
+reverse(k,arr.length-1)
+reverse(0,arr.length-1)
+
+console.log(arr)
+
+function reverse(i,j){
+    while(i<=j){
+        let temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+        i++;
+        j--;
+    }
+
+}
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+ 
