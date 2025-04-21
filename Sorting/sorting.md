@@ -212,3 +212,94 @@ Initial Array: `[10, 5, 12, 1, 3]`
 
 Let me know if you'd like a version in C++, Python, or a diagram for this!
 
+
+
+# Insertion Sort - Dry Run and Explanation
+
+## Overview
+Insertion Sort is a simple sorting algorithm that builds the sorted array one element at a time. It is similar to sorting playing cards in your hand.
+
+---
+
+## Algorithm Steps
+1. Start from the second element (index 1).
+2. Compare it with the elements before it.
+3. Shift all larger elements one position to the right.
+4. Insert the current element into its correct position.
+
+---
+
+## Example
+Input:
+```javascript
+let arr = [10, 5, 12, 1, 3];
+```
+
+### Initial Array:
+```
+[10, 5, 12, 1, 3]
+```
+
+### Pass 1 (i = 1)
+- `key = 5`
+- Compare with `10`: `5 < 10` → shift `10`
+- Insert `5` at index `0`
+```
+[5, 10, 12, 1, 3]
+```
+
+### Pass 2 (i = 2)
+- `key = 12`
+- Compare with `10`: `12 > 10` → no shifting
+```
+[5, 10, 12, 1, 3]
+```
+
+### Pass 3 (i = 3)
+- `key = 1`
+- Compare with `12`: `1 < 12` → shift `12`
+- Compare with `10`: `1 < 10` → shift `10`
+- Compare with `5`: `1 < 5` → shift `5`
+- Insert `1` at index `0`
+```
+[1, 5, 10, 12, 3]
+```
+
+### Pass 4 (i = 4)
+- `key = 3`
+- Compare with `12`: `3 < 12` → shift `12`
+- Compare with `10`: `3 < 10` → shift `10`
+- Compare with `5`: `3 < 5` → shift `5`
+- Insert `3` at index `1`
+```
+[1, 3, 5, 10, 12]
+```
+
+---
+
+## Final Sorted Array:
+```
+[1, 3, 5, 10, 12]
+```
+
+---
+
+## Time Complexity
+| Case       | Time Complexity |
+|------------|-----------------|
+| Best Case  | O(n)            |
+| Average    | O(n^2)          |
+| Worst Case | O(n^2)          |
+
+---
+
+## Space Complexity
+- **O(1)** (In-place sort)
+
+---
+
+## Conclusion
+Insertion Sort is simple and intuitive but inefficient on large datasets. It's suitable for small arrays or nearly sorted data.
+
+Let me know if you'd like a visual representation or interactive demo!
+
