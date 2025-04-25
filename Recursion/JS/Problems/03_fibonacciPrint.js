@@ -6,7 +6,7 @@
  */
 
 //using iterative
-
+/*
 let first=0;
 let second=1;
 process.stdout.write(first+" "+second+" ")
@@ -17,3 +17,20 @@ for(let i=1;i<=n-2;i++){
     second=third
     process.stdout.write(third+" ")
 }
+
+*/
+
+// using recursion
+
+function printFib(n,first,second){
+
+if(n==1 || n==0) return;
+let third=first+second;
+process.stdout.write(third+" ")
+
+printFib(n-1,second,third)
+}
+
+let n=6
+process.stdout.write(0+" "+1+" ")
+printFib(n-1,0,1)
