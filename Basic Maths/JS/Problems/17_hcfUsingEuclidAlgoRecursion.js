@@ -13,4 +13,14 @@ function hcf(a,b){
 
 }
 
-console.log(hcf(a,b))
+console.log("gcd : ",hcf(a,b))
+
+
+
+//optimised
+ function hcf2(a,b){
+  if(b==0) return a;
+  return hcf2(b,a%b);
+ }
+
+ console.log("gcd2 : ",hcf2(a,b))
