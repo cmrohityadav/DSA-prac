@@ -5,7 +5,7 @@
 - [Algo](#algorithms)
 - [Time Complexity](#time-complexity)
 - [Space Complexity](#space-complexity)
-- []()
+- [Array](#array)
 - []()
 - []()
 - []()
@@ -145,7 +145,19 @@ isliye constant multipliers aur small terms ignore karte hain.
 - Space complexity refers to the amount of memory an algorithm uses as function of the input size.
 - It's a measure of how much memory an algorithm requires to execute and solve a problem.
 
+## Array
+- Fixed-size collection of element of same type
+- Stored int contiguous memory
+- Indexing 0 based in C++
 
+```cpp
+int name[4];
+```
+```go
+var name  [4]int
+```
+
+### Two Pointers
 
 
 
