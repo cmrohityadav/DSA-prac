@@ -3,8 +3,8 @@
 # contents
 - [Data Structure](#data-structures)
 - [Algo](#algorithms)
-- []()
-- []()
+- [Time Complexity](#time-complexity)
+- [Space Complexity](#space-complexity)
 - []()
 - []()
 - []()
@@ -141,6 +141,9 @@ isliye constant multipliers aur small terms ignore karte hain.
 
 8. Rule 7: Function Calls (Recursion) → Add or Multiply accordingly
 
+## Space Complexity
+- Space complexity refers to the amount of memory an algorithm uses as function of the input size.
+- It's a measure of how much memory an algorithm requires to execute and solve a problem.
 
 
 
