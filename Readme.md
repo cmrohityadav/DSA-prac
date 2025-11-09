@@ -1,6 +1,7 @@
 # Data Structures and Algorithms
 **Constsitance | Practice | Implement | Compete**
 # contents
+- [Patterns](#patterns)
 - [Data Structure](#data-structures)
 - [Algo](#algorithms)
 - [Time Complexity](#time-complexity)
@@ -162,6 +163,7 @@ var name  [4]int
 
 
 # Patterns
+- [Two Pointers](#two-pointers)
 
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
@@ -170,6 +172,7 @@ var name  [4]int
 - Question me agar `Merge` /`Remove Duplicate` /`Re-arrage`
 - `LinkList` Question me `Detect Cycle` ya  `Cycle  lagane se` Question Bann jayega 
 - Question me `Pairs`/`Triplets`/`Quadruple` ho to Two Pointers k bare me soch skte hai
+- Agar Question me `Do not use Extra Space` krke agar 2 se jyda chiz find krni hai to Two Pointer Use kr skte hai
 
 
 
