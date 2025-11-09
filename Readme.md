@@ -161,4 +161,20 @@ var name  [4]int
 
 
 
+# Patterns
+
+## Two Pointers
+- Question `Array` ya `LinkList`  hi hog 80% case me
+- Tree,Graph,Stack,DP,Queue isme `99%` case me Two `Pointers nhi lagta`
+- `Sorted` ho ya `Sort kr skte` hai fir aasaan hoga to Two Pointers ka soch sakte hai
+- Question me agar `Merge` /`Remove Duplicate` /`Re-arrage`
+- `LinkList` Question me `Detect Cycle` ya  `Cycle  lagane se` Question Bann jayega 
+- Question me `Pairs`/`Triplets`/`Quadruple` ho to Two Pointers k bare me soch skte hai
+
+
+
+
+
+
+
 
