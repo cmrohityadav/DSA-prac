@@ -14,7 +14,7 @@ class Node{
 
 class List{
     Node* head;
-    Node* tail;
+    Node* tail; //optionally
 public:
     List(){
         head=tail=NULL;
@@ -49,6 +49,54 @@ public:
         }
     }
 
+    void pop_front(){
+        if(head==NULL){
+            cout<<"SLL is empty\n";
+            return;
+        }
+
+        if (head->next == NULL)
+        {
+            delete head;
+            head = NULL;
+            return;
+        }
+
+
+        Node* tempNode=head;
+        head=head->next;
+
+        tempNode->next=NULL;
+        delete tempNode;
+    }
+
+    void pop_back(){
+        if(head==NULL){
+            cout<<"SLL is empty\n";
+            return;
+        }
+
+        // Case: Only one node
+        if (head->next == NULL)
+        {
+            delete head;
+            head = NULL;
+            return;
+        }
+
+        Node* tempNode=head;
+
+        while(tempNode->next->next!=NULL){
+            tempNode=tempNode->next;
+        }
+        Node* delNode=tempNode->next;
+        tempNode->next=NULL;
+
+        delete delNode;
+    }
+
+
+
     void print(){
         Node* newNodeTemp=head;
         cout << "\nLinked List:  ";
@@ -68,11 +116,14 @@ int main(){
     List mySLL;
 
     mySLL.push_front(10);
-    mySLL.push_front(20);
-    mySLL.push_front(30);
+    // mySLL.push_front(20);
+    // mySLL.push_front(30);
 
-    mySLL.push_back(100);
-    mySLL.push_back(200);
+    // mySLL.push_back(100);
+    // mySLL.push_back(200);
+
+    // mySLL.pop_front();
+    mySLL.pop_back();
 
     mySLL.print();
 
