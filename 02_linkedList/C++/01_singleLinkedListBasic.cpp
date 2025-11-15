@@ -32,14 +32,34 @@ public:
         }
     }
 
+    void push_back(int val){
+        Node* newNode=new Node(val);
+
+        if(head==NULL){
+            head=newNode;
+        }else{
+            Node* tempNode=head;
+            while(tempNode->next!=NULL){
+                tempNode=tempNode->next;
+            }
+
+            tempNode->next=newNode;
+            
+            tail=newNode;
+        }
+    }
+
     void print(){
         Node* newNodeTemp=head;
-
+        cout << "\nLinked List:  ";
         while(newNodeTemp!=NULL){
-            cout<<"[ "<<newNodeTemp->data<<" ] -> ";
+            cout<<"[ "<<newNodeTemp->data<<" ]";
+
+            if(newNodeTemp->next!=NULL) cout<<"-->";
+
             newNodeTemp=newNodeTemp->next;
         }
-
+        cout<<"--> NULL\n";
     }
 };
 
@@ -50,6 +70,9 @@ int main(){
     mySLL.push_front(10);
     mySLL.push_front(20);
     mySLL.push_front(30);
+
+    mySLL.push_back(100);
+    mySLL.push_back(200);
 
     mySLL.print();
 
