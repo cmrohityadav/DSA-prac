@@ -7,7 +7,7 @@
 - [Time Complexity](#time-complexity)
 - [Space Complexity](#space-complexity)
 - [Array](#array)
-- []()
+- [Linked List](#linked-listd)
 - []()
 - []()
 - []()
@@ -319,6 +319,8 @@ while(t != NULL){
     t = t->next;               // next node par jao
 }
 ```
+
+### Singly Linked List
 
 
 
