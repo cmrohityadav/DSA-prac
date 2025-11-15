@@ -158,7 +158,172 @@ int name[4];
 var name  [4]int
 ```
 
-### Two Pointers
+## Linked List
+- A Linked List is a data structure made of nodes
+- Har node ke paas do cheezein hoti hain
+1. `DATA`
+2. `next` pointer/address : jisme next node ka address hota hai
+
+- **Box ko pata hota hai ---> next wala box kaha hai**
+- [ `data` | `address` ]
+- [ ] ko NODE kahte hai
+- starting node is `HEAD` , its store address of starting node
+- `NULL` ka matlab → list ka end.
+-   100x      200x        300x
+-  [1|200x]   [2|300x]    [3|NULL]
+
+-  head=100x
+### traversal / Reading
+```cpp
+while(t!=NULL){
+    cout<<t->data;
+    t=t->next;
+}
+
+```
+### Insertation
+```bash
+   100x        200x         300x
+ [1 | 200x] → [2 | 300x] →  [3 | NULL]
+
+ head = 100x
+
+```
+- Insertion ke general steps:
+1. Ek new node create karo
+2. Uska data set karo
+3. Uska next pointer sahi jagah point karwao
+4. Purane nodes ke pointers ko update karo
+- left to right and bottom to top
+- create new `Node`
+- set it proper address and all think 
+```[A] → [B] → [C]```
+- Tum insert kar rahe ho X (B ke baad):
+- Pehle NEW pointer set karo (left to right)
+- X->next = C
+- Phir purane pointer ko update karo (bottom to up)
+- B->next = X
+
+#### Insert at Beginning (Head me insert karna)
+```bash
+newNode->next = head
+head = newNode
+```
+#### Insert in Middle (kisi position par)
+- Steps
+1. jis `node ke baad insert` karna hai, uska `pointer p `rakho
+2. new node ka next = p->next
+3. p->next = new node
+```bash
+newNode->next = p->next;
+p->next = newNode;
+```
+#### Insert at End
+Traversal required:
+```bash
+while(t->next != NULL)
+     t = t->next;
+
+t->next = newNode;
+newNode->next = NULL;
+```
+-   100x      200x        300x
+-  [1|200x]   [2|300x]    [3|NULL]
+- head=100x
+
+
+### Delete
+#### Delete at Beginning
+```bash
+head → [A] → [B] → [C]
+delete A
+```
+Steps: 
+1. d = head (delete node)
+2. head = head->next
+3. delete d
+```cpp
+Node* d = head;      // node to delete
+head = head->next;   // shift head
+delete d;
+```
+
+#### Delete in Middle
+```bash
+[A] → [B] → [C] → [D]
+delete C
+```
+Steps: 
+1. p = previous node jaaha se jisko delete krna hai
+2. d = delete node,jis node ko delete karna hai
+3. p->next = d->next
+4. delete d
+```cpp
+Node* d = head;    // delete node
+Node* p = NULL;    // previous node
+
+while(d != NULL && d->data != value){
+    p = d;
+    d = d->next;
+}
+
+if(d != NULL){
+    p->next = d->next;
+    delete d;
+}
+```
+#### Delete at End
+```bash
+[A] → [B] → [C]
+delete C
+```
+Steps:
+1. Last node (d) tak jao
+2. p = previous node
+3. p->next = NULL
+4. Delete d
+```cpp
+Node* d = head;   // delete node (last node)
+Node* p = NULL;   // previous node
+
+while(d->next != NULL){   // until last node
+    p = d; 
+    d = d->next;
+}
+
+p->next = NULL;   // remove last
+delete d;         // delete last node
+```
+
+### UPDATE
+```bash
+[1] → [5] → [9]
+oldValue = 5
+newValue = 50
+# Hume 5 ko 50 se replace karna hai.
+```
+Steps
+1. Ek pointer t banao jo head se start karega
+2. List ko left to right traverse karo
+3. Jahan tumhe oldValue mil jaye → wahi ruk jao
+4. t->data = newValue kar do
+5. Kaam complete, loop break
+```cpp
+Node* t = head;    // traversal pointer
+
+while(t != NULL){
+    if(t->data == oldValue){   // jis data ko change karna hai
+        t->data = newValue;    // new value assign karo
+        break;                 // mil gaya → loop se bahar
+    }
+    t = t->next;               // next node par jao
+}
+```
+
+
+
+
+
 
 
 
