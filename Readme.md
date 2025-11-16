@@ -342,6 +342,121 @@ while(t != NULL){
 - Agar Question me `Do not use Extra Space` krke agar 2 se jyda chiz find krni hai to Two Pointer Use kr skte hai
 - `In-Order` means `No Space`
 
+### Example
+- **Two sum**
+```cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+
+        short left=0;
+        short right=numbers.size()-1;
+
+        while(left<right){
+            int sum=numbers[left]+numbers[right];
+            if(sum==target) return {left+1,right+1};
+            else if(sum>target){
+                right--;
+            }else{
+                left++;
+            }
+        }
+
+        return {-1,-1};
+    }
+};
+```
+### Example
+- Unique Two Sum Pairs (**No duplicates**)
+- [1,1,1,2,2,3,3,3]
+- Find all Unique pairs
+```cpp
+vector<vector<int>> twoSumUnique(vector<int>& a, int target) {
+    vector<vector<int>> result;
+    int left = 0;
+    int right = a.size() - 1;
+
+    while(left<right){
+        int sum = a[left] + a[right];
+        if(sum==target)
+        {
+            // store unique pair
+            result.push_back({a[left], a[right]});
+            left++;
+            right--;
+
+            // skip duplicates on left
+            while(a[left]==a[left-1]){
+                left++;
+            }
+
+            // skip duplicates on right
+            while(a[right]==a[right+1]){
+                right--;
+            }
+        }else if(sum<target){
+            left++;
+        }else{//sum>target
+            right--;
+        }
+    }
+    return result;
+}
+```
+
+### Example
+- Triplet Unique Sum
+- [-1,0,1,2,-1,4]
+- for each i 2-sum with sum=-a[i];
+- sort [-1,-1,0,1,2,4]
+```cpp
+vector<vector<int>> threeSumUnique(vector<int>& a) {
+vector<vector<int>> result;
+sort(a.begin(), a.end());
+int n = a.size();
+
+for(int i=0;i<n-2;i++){
+    // skip duplicate first numbers
+    if(i>0 && a[i]==a[i-1]){
+        continue;
+    }
+
+    int left=i+1;
+    int right=n-1;
+
+    int targetSum=-(a[i]);
+
+    while(left<right){
+        int twoSum=a[left]+a[right];
+
+        if(twoSum==targetSum){
+            result.push_back({a[i], a[left], a[right]});
+            left++;
+            right--;
+
+            while(left < right && a[left]==a[left-1]){
+                left++;
+            }
+
+            while(left < right && a[right]==a[right+1]){
+                right--;
+            }
+        }else if(twoSum>targetSum){
+            right--;
+        }else{
+            left++;
+        }
+    }
+}
+
+return result;
+
+}
+```
+
+
+
+
 
 
 
