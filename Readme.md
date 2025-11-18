@@ -405,7 +405,7 @@ vector<vector<int>> twoSumUnique(vector<int>& a, int target) {
 ```
 
 ### Example
-- Triplet Unique Sum
+- **Triplet Unique Sum**
 - [-1,0,1,2,-1,4]
 - for each i 2-sum with sum=-a[i];
 - sort [-1,-1,0,1,2,4]
@@ -453,7 +453,44 @@ return result;
 
 }
 ```
+### Example 
+- **3Sum Closest**
+- Input: nums = [-1,2,1,-4], target = 1
+- Output: 2
+- Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+```cpp
+int threeSumClosest(vector<int>& nums, int target) {
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        int maxDiff=INT_MAX;
+        int result=0;
 
+        for(int i=0;i<n-2;i++){
+            int left=i+1;
+            int right=n-1;
+
+            while(left<right){
+                int total=nums[i]+nums[left]+nums[right];
+                int tempDiff=abs(target-total);
+
+                if(tempDiff<maxDiff){
+                    maxDiff=tempDiff;
+                    result=total;
+                }
+
+                if(total==target){
+                    return result;
+                }else if(total>target){
+                    right--;
+                }else{
+                    left++;
+                }
+
+            }
+        }
+        return result;
+    }
+```
 ### Example
 - **Triplets with Smaller Sum**
 - {-2, 0, 1, 3}
@@ -488,6 +525,90 @@ long long countTriplets(int n, long long sum, long long arr[]) {
         return count;
     }
 ```
+
+### Example
+- **Remove Duplicates from Sorted Array**
+- input: nums = [0,0,1,1,1,2,2,3,3,4]
+- output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+```cpp
+int removeDuplicates(vector<int>& nums) {
+       int len = nums.size();
+        if (len == 0) return 0;
+
+        int officer = 0;  
+        int cmo = 1;      
+        int uniqueItem = 1; 
+
+        while (cmo < len) {
+            if (nums[cmo] == nums[cmo - 1]) {
+                cmo++;
+                continue;
+            }
+
+            officer++;
+            nums[officer] = nums[cmo];
+            cmo++;
+            uniqueItem++;
+        }
+
+        return uniqueItem;
+    }
+```
+
+### Example
+- **Squares of a Sorted Array**
+- Input: nums = [-4,-1,0,3,10]
+- Output: [0,1,9,16,100]
+- Explanation: After squaring, the array becomes [16,1,0,9,100].
+- After sorting, it becomes [0,1,9,16,100].
+```cpp
+vector<int> sortedSquares(vector<int>& nums) {
+        int sizeNums=nums.size();
+        vector<int>pos;
+        vector<int>neg;
+
+        for(int i=0;i<nums.size();i++){
+            int sqr=nums[i]*nums[i];
+            if(nums[i]>=0){
+                pos.push_back(sqr);
+            }else{
+                neg.push_back(sqr);
+            }
+        }
+
+        reverse(neg.begin(),neg.end());
+
+        if(pos.size()==0){
+            return  neg;
+        }
+
+        if(neg.size()==0){
+            return pos;
+        }
+
+        short posLen=0;
+        short negLen=0;
+        vector<int> ans;
+        while(posLen<pos.size() && negLen<neg.size()){
+            if(pos[posLen]<neg[negLen]){
+               ans.push_back(pos[posLen++]);
+            }else{
+                ans.push_back(neg[negLen++]);
+            }
+        }
+
+        while(negLen<neg.size()){
+            ans.push_back(neg[negLen++]);
+        }
+
+        while(posLen<pos.size()){
+            ans.push_back(pos[posLen++]);
+        }
+
+        return ans;
+    }
+```
+
 
 
 
