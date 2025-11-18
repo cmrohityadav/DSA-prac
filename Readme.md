@@ -454,6 +454,41 @@ return result;
 }
 ```
 
+### Example
+- **Triplets with Smaller Sum**
+- {-2, 0, 1, 3}
+- triplets with sum less than 2 (-2, 0, 1) and (-2, 0, 3)
+-  {5, 1, 3, 4, 7}
+- triplets with sum less than 12 (1, 3, 4), (1, 3, 5), (1, 3, 7) and (1, 4, 5).
+```cpp
+long long countTriplets(int n, long long sum, long long arr[]) {
+        // Your code goes here
+        sort(arr,arr+n);
+        long long count=0;
+        
+        for(int i=0;i<n-2;i++){
+            long long left=i+1;
+            long long right=n-1;
+            
+            
+            
+            while(left<right){
+                
+                long long mysum=arr[i]+arr[right]+arr[left];
+                
+                if(mysum>=sum){
+                    right--;
+                }else{
+                    count=count+(right-left);
+                    left++;
+                }
+            }
+        }
+        
+        return count;
+    }
+```
+
 
 
 
