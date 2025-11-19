@@ -610,7 +610,7 @@ vector<int> sortedSquares(vector<int>& nums) {
 ```
 
 ### Example
-- Dutch National Flag Algorithm
+- **Dutch National Flag Algorithm**
 - Used to sort an array of 0s, 1s, and 2s in one pass, O(n) time, O(1) space
 - |--- 0 zone ---|--- 1 zone ---|--- 2 zone ---|
 - Rules While Iterating (mid pointer inspector hota hai)
