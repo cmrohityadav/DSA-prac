@@ -331,7 +331,7 @@ while(t != NULL){
 
 # Patterns
 - [Two Pointers](#two-pointers)
-
+- [Sliding Windows](#sliding-windows)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -663,6 +663,27 @@ void sortColors(vector<int>& nums) {
     }
 
 ```
+
+## Sliding Windows
+- `Sliding` : expand and shrink
+- Sliding `low` and `high`
+- `high++` = `Expand`
+- `low++` = `Shrink`
+- Sliding windows are two type: `Fixed` and `dynamics`
+- agar `size/length` diya hai Question me(sub array /substring)ka to  `Fixed Window`
+### Flowchart hint for sliding windows
+- `Array` / `String` ke Question me lagega
+- `LinkedList` me `nhi` lagega
+- `Sub array` / `SubString ` Question Me hoga ya samjha me aa rh hoga
+- Question me ,`Are we finding`: `max.`/`min.`/`longest`/`shortest`/`Sum`/`count`/`average`/`at most k.`/`at least k.`/`exactly k.`
+
+### Example
+- Given an array, max sum of any subarray of size k
+
+
+
+
+
 
 
 
