@@ -609,6 +609,61 @@ vector<int> sortedSquares(vector<int>& nums) {
     }
 ```
 
+### Example
+- Dutch National Flag Algorithm
+- Used to sort an array of 0s, 1s, and 2s in one pass, O(n) time, O(1) space
+- |--- 0 zone ---|--- 1 zone ---|--- 2 zone ---|
+- Rules While Iterating (mid pointer inspector hota hai)
+```bash
+low = 0  
+mid = 0  
+high = last index  
+```
+1. mid ko agar 2 mile
+
+    - 2 ko last me jaana chahiye → high zone
+
+    - Isliye swap(mid, high)
+
+    - high-- (taaki next 2 last me ja sake)
+
+    - mid++ nahi karte → kyunki mid pe naya element aaya, usko check karna hai
+
+2. mid ko agar 1 mile
+
+    - 1 already middle zone ka element hai
+
+    - Simply mid++
+3. mid ko agar 0 mile
+    - 0 ko front zone me rakhna hota hai
+    - Kyu 2 ko hum already , high zone me daal diye, 1 mila to wo uske hi  zone me hai
+    - Isliye swap(mid, low)
+    - low++ (0 zone expand),ki dusre zero rakh paye
+    - mid++ (kyunki ab mid pe new element nahi aaya, swap low-mid kiya)
+
+```cpp
+void sortColors(vector<int>& nums) {
+        short low=0;
+        short mid=0;
+        short high=nums.size()-1;
+
+        while(mid<=high){
+
+            if(nums[mid]==2){
+                swap(nums[mid],nums[high]);
+                high--;
+            }else if(nums[mid]==1){
+                mid++;
+            }else if(nums[mid]==0){
+                swap(nums[mid],nums[low]);
+                low++;
+                mid++;
+            }
+        }
+    }
+
+```
+
 
 
 
