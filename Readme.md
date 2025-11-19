@@ -676,9 +676,56 @@ void sortColors(vector<int>& nums) {
 - `LinkedList` me `nhi` lagega
 - `Sub array` / `SubString ` Question Me hoga ya samjha me aa rh hoga
 - Question me ,`Are we finding`: `max.`/`min.`/`longest`/`shortest`/`Sum`/`count`/`average`/`at most k.`/`at least k.`/`exactly k.`
+### Steps for solve the problem
+1. Identify the Pattern , is sliding window Question?
+2. Fixed/Variable?
+3. Data/information of window: meaningfull data
+4. New window of Information find out kr lo, repeat krte raho end tak
 
 ### Example
 - Given an array, max sum of any subarray of size k
+- Input: arr[] = [100, 200, 300, 400], k = 2
+- Output: 700
+- Explanation: arr2 + arr3 = 700, which is maximum.
+```cpp
+int maxSubarraySum(vector<int>& arr, int k) {
+        // code here
+        int maxSum=0;
+        int tempSum=0;
+        int low=0;
+        int high=k-1;
+        int end=arr.size();
+        
+        
+        //first Time summing
+        for(int i=low;i<=high;i++){
+            tempSum+=arr[i];
+        }
+        
+        
+        while(high<end){
+            if(tempSum>maxSum){
+                maxSum=tempSum;
+            }
+            
+            //sliding window
+            low++;
+            high++;
+            
+            //checking high could be cross array size
+            if(high==end){
+                break;
+            }
+            
+            //summing next new window
+            tempSum=tempSum-arr[low-1];
+            tempSum=tempSum+arr[high];
+            
+        }
+        
+        return maxSum;
+    }
+```
 
 
 
