@@ -334,13 +334,13 @@ while(t != NULL){
 
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
-- Tree,Graph,Stack,DP,Queue isme `99%` case me Two `Pointers nhi lagta`
+- Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
 - `Sorted` ho ya `Sort kr skte` hai fir aasaan hoga to Two Pointers ka soch sakte hai
-- Question me agar `Merge` /`Remove Duplicate` /`Re-arrage`
+- Question me agar `Merge` /`Remove Duplicate` /`Re-arrage`/`Subarray` or inke sath  `in place` ho to indication hai(In place means No extra space)
 - `LinkList` Question me `Detect Cycle` ya  `Cycle  lagane se` Question Bann jayega 
-- Question me `Pairs`/`Triplets`/`Quadruple` ho to Two Pointers k bare me soch skte hai
+- Question me find more than one thing like  `Pairs`/`Triplets`/`Quadruple` ho to Two Pointers k bare me soch skte hai
 - Agar Question me `Do not use Extra Space` krke agar 2 se jyda chiz find krni hai to Two Pointer Use kr skte hai
-- `In-Order` means `No Space`
+- `In-order` ka meaning sorted order / increasing order hota hai,`
 
 ### Example
 - **Two sum**
