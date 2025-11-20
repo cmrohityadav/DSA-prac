@@ -683,7 +683,7 @@ void sortColors(vector<int>& nums) {
 4. New window of Information find out kr lo, repeat krte raho end tak
 
 ### Example
-- Given an array, max sum of any subarray of size k
+- **Given an array, max sum of any subarray of size k**
 - Input: arr[] = [100, 200, 300, 400], k = 2
 - Output: 700
 - Explanation: arr2 + arr3 = 700, which is maximum.
@@ -726,6 +726,40 @@ int maxSubarraySum(vector<int>& arr, int k) {
         return maxSum;
     }
 ```
+
+### Example
+- **Mininum Size Subarray Sum.**
+- min. length of subarray whose sum>=target
+- Input: target = 7, nums = [2,3,1,2,4,3]
+- Output: 2
+- Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+- Dynamic Window k case me hamesha `low=0,high=0`
+```cpp
+int minSubArrayLen(int target, vector<int>& nums) {
+        
+        int low=0,high=0;
+        int minLen=INT_MAX;
+        int sum=0;
+        int end =nums.size();
+
+
+        while(high<end){
+            sum=sum+nums[high];
+
+            while(sum>=target){
+                int len=high-low+1;
+                minLen=min(minLen,len);
+
+                sum=sum-nums[low];
+                low++;
+            }
+            high++;
+        }
+
+         return (minLen == INT_MAX) ? 0 : minLen;
+    }
+```
+
 
 
 
