@@ -726,7 +726,25 @@ int maxSubarraySum(vector<int>& arr, int k) {
         return maxSum;
     }
 ```
+### Template for most variable Slide window
+```bash
+high=0;low=0;
+for(high=0;high<n;high++){
+    [information: high ko include]
 
+    [
+    jab tak information
+    galat hai , us low ko aage badate raho (low++)
+    low ko shrink
+    result/information-> low hatao
+    ]
+
+    # information jab sahi ho gya to result me likh lo
+    [len=high-low+1]
+    result=max(res,len)
+}
+
+```
 ### Example
 - **Mininum Size Subarray Sum.**
 - min. length of subarray whose sum>=target
@@ -757,6 +775,46 @@ int minSubArrayLen(int target, vector<int>& nums) {
         }
 
          return (minLen == INT_MAX) ? 0 : minLen;
+    }
+```
+
+### Example
+- **Longest Substring with K Uniques**
+- Input: s = "aabacbebebe", k = 3
+- Output: 7
+- Explanation: The longest substring with exactly 3 distinct characters is "cbebebe", which includes 'c', 'b', and 'e'.
+```cpp
+int longestKSubstr(string &s, int k) {
+        // code here
+        int low=0,high=0;
+        int res=INT_MIN;
+        int n=s.size();
+        unordered_map<char,int> f;
+        
+        for(high=0;high<n;high++)
+        {
+            f[s[high]]++;
+            int siz=f.size();
+            while(f.size()>k) // shrink
+            {
+                f[s[low]]--;
+                low++;
+                if(f[s[low-1]] == 0)
+                f.erase(s[low-1]);
+            }
+            
+            // now it can be less or equal
+            if(f.size()==k)
+            {
+                int len=high-low+1;
+                res=max(res,len);
+            }
+        }
+        
+        if(res==INT_MIN)
+        return -1;
+        return res;
+
     }
 ```
 
