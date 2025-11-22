@@ -818,6 +818,44 @@ int longestKSubstr(string &s, int k) {
     }
 ```
 
+### Example
+- Fruit into Baskets
+- In the basket, at most 2  distinct types of fruit
+- find max. no. of fruits, kitna collect kr skte ho
+- Same Question , finf longest sbarray which has atmost 2 distinct numbers
+
+```cpp
+int totalFruit(vector<int>& fruits) {
+        int result=INT_MIN;
+        int high=0;
+        int low=0;
+
+        int end=fruits.size();
+
+        unordered_map<int,int>freq;
+
+        for(high=0;high<end;high++){
+            freq[fruits[high]]++;
+
+            while(freq.size()>2){
+                freq[fruits[low]]--;
+                low++;
+                if(freq[fruits[low-1]]==0){
+                    freq.erase(fruits[low-1]);
+                }
+            }
+
+            if(freq.size()<=2){
+                int len=high-low+1;
+                result=max(len,result);
+            }
+        }
+
+        return result;
+    }
+```
+
+
 
 
 
