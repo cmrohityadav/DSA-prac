@@ -819,9 +819,13 @@ int longestKSubstr(string &s, int k) {
 ```
 
 ### Example
-- Fruit into Baskets
+- **Fruit into Baskets**
 - In the basket, at most 2  distinct types of fruit
 - find max. no. of fruits, kitna collect kr skte ho
+- Input: fruits = [0,1,2,2]
+- Output: 3
+- Explanation: We can pick from trees [1,2,2].
+- If we had started at the first tree, we would only pick from trees [0,1]
 - Same Question , finf longest sbarray which has atmost 2 distinct numbers
 
 ```cpp
@@ -854,6 +858,14 @@ int totalFruit(vector<int>& fruits) {
         return result;
     }
 ```
+
+### Example
+- **Longest Substring without duplicate characters**
+- Given a string s, find the length of the longest substring without duplicate characters
+- Input: s = "abcabcbb"
+- Output: 3
+- Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
+
 
 
 
