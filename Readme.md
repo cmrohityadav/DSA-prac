@@ -865,6 +865,91 @@ int totalFruit(vector<int>& fruits) {
 - Input: s = "abcabcbb"
 - Output: 3
 - Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
+```cpp
+int lengthOfLongestSubstring(string s) {
+        int low=0,high=0;
+        int end=s.size();
+        if(end==0) return end;
+        int result=INT_MIN;
+
+        unordered_map<char,int>freq;
+
+        for(high=0;high<end;high++){
+            freq[s[high]]++;
+            
+            int window=high-low+1;
+
+            while(window>freq.size()){
+                freq[s[low]]--;
+
+                if(freq[s[low]]==0){
+                    freq.erase(s[low]);
+                }
+
+                low++;
+                window=high-low+1;
+            }
+
+            if(window==freq.size()){
+             result=max(window,result);
+            }
+        }
+        return result;
+    }
+```
+
+### Example
+- **Longest Repeating Character Replacement**
+- You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
+
+- Return the length of the longest substring containing the same letter you can get after performing the above operations.
+- Input: s = "AABABBA", k = 1
+- Output: 4
+- Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
+- The substring "BBBB" has the longest repeating letters, which is 4.
+There may exists other ways to achieve this answer too.
+```cpp
+int findMax(vector<int> &num){
+        int maxi=INT_MIN;
+        for(auto el:num){
+            if(el>maxi){
+                maxi=el;
+            }
+        }
+        return maxi;
+    }
+    int characterReplacement(string s, int k) {
+        int high=0;
+        int low=0;
+        int end=s.size();
+        int result=INT_MIN;
+
+        vector<int>freq(256,0);
+
+        for(high=0;high<end;high++){
+            freq[s[high]]++;
+
+            int window=high-low+1;
+            int maxCount=findMax(freq);
+            int needChanges=window-maxCount;
+
+
+            while(needChanges>k){
+                freq[s[low]]--;
+                low++;
+                window=high-low+1;
+                maxCount=findMax(freq);
+                needChanges=window-maxCount;
+            }
+
+            window=high-low+1;
+            result=max(window,result);
+            
+        }
+
+        return result;
+    }
+```
 
 
 
