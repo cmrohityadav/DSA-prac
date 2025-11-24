@@ -674,7 +674,7 @@ void sortColors(vector<int>& nums) {
 ### Flowchart hint for sliding windows
 - `Array` / `String` ke Question me lagega
 - `LinkedList` me `nhi` lagega
-- `Sub array` / `SubString ` Question Me hoga ya samjha me aa rh hoga
+- `Sub array` / `SubString `/`window` Question Me hoga ya samjha me aa rh hoga
 - Question me ,`Are we finding`: `max.`/`min.`/`longest`/`shortest`/`Sum`/`count`/`average`/`at most k.`/`at least k.`/`exactly k.`
 ### Steps for solve the problem
 1. Identify the Pattern , is sliding window Question?
@@ -706,7 +706,7 @@ int maxSubarraySum(vector<int>& arr, int k) {
         while(high<end){
             if(tempSum>maxSum){
                 maxSum=tempSum;
-            }
+            }jj
             
             //sliding window
             low++;
@@ -734,7 +734,7 @@ for(high=0;high<n;high++){
 
     [
     jab tak information
-    galat hai , us low ko aage badate raho (low++)
+    galat hai , us low ko aage badate raho (low++) is ummed me ki information sahi ho jaye
     low ko shrink
     result/information-> low hatao
     ]
