@@ -681,6 +681,9 @@ void sortColors(vector<int>& nums) {
 2. Fixed/Variable?
 3. Data/information of window: meaningfull data
 4. New window of Information find out kr lo, repeat krte raho end tak
+### Notes
+- `max window` Question k case me hamesha `sum(any problem)<=K`
+- `min window` Question ke case me `Sum(any problem) >=K`
 
 ### Example
 - **Given an array, max sum of any subarray of size k**
@@ -950,6 +953,38 @@ int findMax(vector<int> &num){
         return result;
     }
 ```
+
+### Template for `min Window` Problem anyThing>=K
+```cpp
+for(high=0;high<n;high++){
+
+    //information ko include kro
+    sum+=a[high];
+
+    while(information jab tak> sahi hai){
+        // sahi information ko result me store kro
+        int len=high-low+1;
+        result=min(result-len);
+
+        sum-=a[low];
+        low++;
+    }
+
+    //information galat ho ho chuka hai yaha
+
+}
+
+return result
+```
+
+|max window | min window|
+|-----------|-----------|
+|sum<=k | sum>=k|
+| high =0 -> n | high=0 ->n|
+| high ko include | high ko include |
+| Shrink low, jab galat ho | shrink low,Jab `sahi` ho, aur result yehi par likhna hau(while loop me hi)|
+| Result after galat loop | kr chuke hai upar while loop me|
+
 
 
 
