@@ -985,6 +985,60 @@ return result
 | Shrink low, jab galat ho | shrink low,Jab `sahi` ho, aur result yehi par likhna hau(while loop me hi)|
 | Result after galat loop | kr chuke hai upar while loop me|
 
+### Example
+- **Minimum window Substring**
+- Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
+- Input: s = "ADOBECODEBANC", t = "ABC"
+- Output: "BANC"
+- Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t
+```cpp
+bool validFreq(vector<int> &t, vector<int> &s){
+        for(int i=0;i<256;i++){
+            if(t[i]>s[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+    string minWindow(string s, string t) {
+        int tSize=t.size();
+        int sSize=s.size();
+        if(tSize>sSize){
+            return "";
+        }
+        vector<int>freqTest(256,0);
+        vector<int>freqString(256,0);
+
+        for(int i=0;i<tSize;i++){
+            freqTest[t[i]]++;
+        }
+
+        int high=0,low=0;
+        int resultLen=INT_MAX;
+        int startPos=-1;
+
+        for(high=0;high<sSize;high++){
+            freqString[s[high]]++;
+
+            while(validFreq(freqTest,freqString)){
+                int len=high-low+1;
+
+                if(len<resultLen){
+                    resultLen=len;
+                    startPos=low;
+                }
+
+                freqString[s[low]]--;
+                low++;
+            }
+        }
+
+        if(resultLen==INT_MAX) return "";
+        else return s.substr(startPos,resultLen);
+    }
+
+```
+
 
 
 
