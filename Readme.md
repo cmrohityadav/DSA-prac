@@ -332,6 +332,7 @@ while(t != NULL){
 # Patterns
 - [Two Pointers](#two-pointers)
 - [Sliding Windows](#sliding-windows)
+- [Fast & Slow pointers](#fast--slow-pointers)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -1037,6 +1038,54 @@ bool validFreq(vector<int> &t, vector<int> &s){
         else return s.substr(startPos,resultLen);
     }
 
+```
+
+## Fast & Slow Pointers
+- Agar Question me ho `Cycle` / `Loop` / `Repeatative Behaviour `Pata krna hai, hai ki nhi
+
+- **Slow**: Slow doudta ho
+- **Fast**: tezi se daudta 
+
+### Template for Fast & Slow Pointers
+```bash
+slow=head;
+fast=head;
+
+while(fast!=NULL and fast->next != NULL){
+    //dauda lijiye
+    slow=slow->next;
+
+    //dauda lijiye 2 times
+    fast=fast->next->next;
+
+    if(slow==fast){
+        return true;
+    }
+}
+
+return false;
+```
+
+### Example
+- **Linked List Cycle**
+- Given head, the head of a linked list, determine if the linked list has a cycle in it
+- 
+```cpp
+bool hasCycle(ListNode *head) {
+        ListNode* slow=head;
+        ListNode* fast=head;
+
+        while(fast!=NULL and fast->next !=NULL){
+
+            slow=slow->next;
+            fast=fast->next->next;
+
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
 ```
 
 
