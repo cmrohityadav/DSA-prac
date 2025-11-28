@@ -1041,7 +1041,7 @@ bool validFreq(vector<int> &t, vector<int> &s){
 ```
 
 ## Fast & Slow Pointers
-- Agar Question me ho `Cycle` / `Loop` / `Repeatative Behaviour `Pata krna hai, hai ki nhi
+- Agar Question me ho `Cycle` / `Loop` / `Repeatative Behaviour `/`starting point of cycle` Pata krna hai, hai ki nhi
 
 - **Slow**: Slow doudta ho
 - **Fast**: tezi se daudta 
@@ -1085,6 +1085,50 @@ bool hasCycle(ListNode *head) {
             }
         }
         return false;
+    }
+```
+### Example
+- **Linked List Cycle**
+- Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null
+- [detect start point LL](/media/detectStartLL.png)
+
+```bash
+slow=L1+L2; //distance in t time
+fast=L1+nC+L2;//distance in t time
+
+
+let t=10;
+L1+nC+L2=2(L1+L2);
+L1+nC+L2=2L1+2L2;
+nC=L1+L2;
+
+L1=nC-L2
+# C= no of nodes in cycle
+# n=no. of times fast rann in cycle
+# L1= no. of nodes b/w head and starting
+# L2= no. of nodes b/w start point and meeting point
+
+```
+
+```cpp
+ListNode *detectCycle(ListNode *head) {
+        ListNode* slow=head;
+        ListNode* fast=head;
+
+        while(fast!=NULL and fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+
+            if(fast==slow){
+                slow=head;
+                while(slow!=fast){
+                    slow=slow->next;
+                    fast=fast->next;
+                }
+                return slow;
+            }
+        }
+        return NULL;  
     }
 ```
 
