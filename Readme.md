@@ -1041,7 +1041,7 @@ bool validFreq(vector<int> &t, vector<int> &s){
 ```
 
 ## Fast & Slow Pointers
-- Agar Question me ho `Cycle` / `Loop` / `Repeatative Behaviour `/`starting point of cycle` Pata krna hai, hai ki nhi
+- Agar Question me ho `Cycle` / `Loop` / `Repeatative Behaviour `/`starting point of cycle`/`middle of linked List` Pata krna hai, hai ki nhi
 
 - **Slow**: Slow doudta ho
 - **Fast**: tezi se daudta 
@@ -1129,6 +1129,27 @@ ListNode *detectCycle(ListNode *head) {
             }
         }
         return NULL;  
+    }
+```
+
+### Example
+- **Middle of the Linked List**
+- Given the head of a singly linked list, return the middle node of the linked list.
+
+- If there are two middle nodes, return the second middle node
+
+```cpp
+ListNode* middleNode(ListNode* head) {
+        
+        ListNode* slow=head;
+        ListNode* fast=head;
+
+        while(fast!=NULL && fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+
+        return slow;
     }
 ```
 
