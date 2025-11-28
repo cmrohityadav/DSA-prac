@@ -1090,7 +1090,7 @@ bool hasCycle(ListNode *head) {
 ### Example
 - **Linked List Cycle**
 - Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null
-- [detect start point LL](/media/detectStartLL.png)
+![detect start point LL](/media/detectStartLL.png)
 
 ```bash
 slow=L1+L2; //distance in t time
