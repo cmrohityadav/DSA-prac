@@ -1042,6 +1042,7 @@ bool validFreq(vector<int> &t, vector<int> &s){
 
 ## Fast & Slow Pointers
 - Agar Question me ho `Cycle` / `Loop` / `Repeatative Behaviour `/`starting point of cycle`/`middle of linked List` Pata krna hai, hai ki nhi
+- Most Linked List me,fir Array and Number 
 
 - **Slow**: Slow doudta ho
 - **Fast**: tezi se daudta 
@@ -1152,6 +1153,36 @@ ListNode* middleNode(ListNode* head) {
         return slow;
     }
 ```
+
+### Example
+- **Find the Duplicate Number**
+- Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+- There is only one repeated number in nums, return this repeated number
+```cpp
+int findDuplicate(vector<int>& nums) {
+        int slow=0;
+        int fast=0;
+
+        while(true){
+            slow=nums[slow];
+
+            fast=nums[fast];
+            fast=nums[fast];
+
+            if(slow==fast){
+                slow=0;
+                 while(slow!=fast){
+                    slow=nums[slow];
+                    fast=nums[fast];
+                }
+
+                return slow;
+            }
+        }
+        return slow;
+    }
+```
+
 
 
 
