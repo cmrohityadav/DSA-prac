@@ -1183,6 +1183,38 @@ int findDuplicate(vector<int>& nums) {
     }
 ```
 
+### Example
+- **Happy Number**
+
+```cpp
+int SumOfSquareOfDigits(int n){
+        int sum=0;
+        while(n>0){
+            int lastDigit=n%10;
+            n=n/10;
+            sum=sum+lastDigit*lastDigit;
+        }
+        return sum;
+    }
+
+    bool isHappy(int n) {
+        int slow=n;
+        int fast=n;
+
+        while(fast!=1){
+            slow=SumOfSquareOfDigits(slow);
+
+            fast=SumOfSquareOfDigits(fast);
+            fast=SumOfSquareOfDigits(fast);
+
+            if(slow==fast && slow!=1){
+                return false;
+            }
+        }
+        return true;
+    }
+```
+
 
 
 
