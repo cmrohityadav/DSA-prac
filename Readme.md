@@ -333,6 +333,8 @@ while(t != NULL){
 - [Two Pointers](#two-pointers)
 - [Sliding Windows](#sliding-windows)
 - [Fast & Slow pointers](#fast--slow-pointers)
+- [kadane's Algorithms](#kadane-algorithm)
+
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -1042,7 +1044,7 @@ bool validFreq(vector<int> &t, vector<int> &s){
 
 ## Fast & Slow Pointers
 - Agar Question me ho `Cycle` / `Loop` / `Repeatative Behaviour `/`starting point of cycle`/`middle of linked List` Pata krna hai, hai ki nhi
-- Most Linked List me,fir Array and Number 
+- Mostly Linked List/Array/String/Number  k Question me lagta h
 
 - **Slow**: Slow doudta ho
 - **Fast**: tezi se daudta 
@@ -1214,6 +1216,25 @@ int SumOfSquareOfDigits(int n){
         return true;
     }
 ```
+
+## Kadane algorithm
+- Agar Question me Subarray Contigoues ka `Sum`/`Product`/`Frequency` (Best : min./max.)
+- Where sliding window fail(negative element), it allow negative, positive,zero
+
+### Template
+- Index by index aage jana hai
+- i --->best ending at i
+- It having 2 option
+1. Pahale wale k sath mil jao
+2. Apneapp ko rakho 
+- yeh dono me ek **BEST ENDING** bann jata hai
+- Fir result k sath Update kr de
+- Example
+![Kadane Explaination](/media/kadane_explaination.png)
+![Max Sum Subarray](/media/Kadane_max_sum_subarray.png)
+
+
+
 
 
 
