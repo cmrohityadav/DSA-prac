@@ -1256,6 +1256,36 @@ int maxSubArray(vector<int>& nums) {
     }
 ```
 
+### Example
+- **Smallest sum contiguous subarray**
+- Given an array arr[] of N integers. Find the contiguous sub-array(containing at least one number) which has the minimum sum and return its sum
+- Input: 
+arr[] = {3,-4, 2,-3,-1, 7,-5}
+- Output: -6
+- Explanation: sub-array which has smallest 
+sum among all the sub-array is {-4,2,-3,-1} = -6
+
+```cpp
+int smallestSumSubarray(vector<int>& a) {
+        // Code here
+        int result=a[0];
+        int minBestEndingSum=a[0];
+        
+        for(int i=1;i<a.size();i++){
+            
+            int currentBestEndingSum=minBestEndingSum+a[i];
+            
+            int currentValue=a[i];
+            
+            minBestEndingSum=min(currentValue,currentBestEndingSum);
+            
+            result=min(result,minBestEndingSum);
+        }
+        
+        return result;
+    }
+```
+
 
 
 
