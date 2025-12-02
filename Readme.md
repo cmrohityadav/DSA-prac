@@ -334,6 +334,7 @@ while(t != NULL){
 - [Sliding Windows](#sliding-windows)
 - [Fast & Slow pointers](#fast--slow-pointers)
 - [kadane's Algorithms](#kadane-algorithm)
+- [Prefix Sum](#prefix-sum)
 
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
@@ -1222,6 +1223,7 @@ int SumOfSquareOfDigits(int n){
 - Where sliding window fail(negative element), it allow negative, positive,zero
 
 ### Template
+- best ending -> define/clear
 - Index by index aage jana hai
 - i --->best ending at i
 - It having 2 option
@@ -1285,6 +1287,17 @@ int smallestSumSubarray(vector<int>& a) {
         return result;
     }
 ```
+
+### Example 
+- 
+
+
+## Prefix Sum
+- Prefix Sum=Pahle Sum
+- Question Hmesha Array/Subarray ka hoga
+- ![Prefix Sum ](/media/pattern_prefix_sum.png)
+- Hum sliding window Tab use krte hai Jab element sirf positive ho
+- 
 
 
 
