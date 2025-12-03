@@ -1297,7 +1297,48 @@ int smallestSumSubarray(vector<int>& a) {
 - Question Hmesha Array/Subarray ka hoga
 - ![Prefix Sum ](/media/pattern_prefix_sum.png)
 - Hum sliding window Tab use krte hai Jab element sirf positive ho
-- 
+- Prefix[i]=Prefix[i-1]+a[i-1]; // (0,i-1) tak sum
+- Suffix[i]=Suffix[i+1]+a[i+1]; //( i+1, n-1 ) ka Sum
+
+### Tempalate
+```bash
+[Prefix Data Structure]
+
+[Loop over Array]
+
+[Update Prefix]
+
+[Check Condition]
+```
+
+### Example
+- **Find Pivot Index**
+- The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right
+```cpp
+int pivotIndex(vector<int>& nums) {
+        int prefix=0;
+        int sum=0;
+
+        for(auto i:nums){
+            sum+=i;
+        }
+        
+        if (sum - nums[0] == 0) {
+            return 0;
+        }
+        for(int i=1;i<nums.size();i++){
+            prefix +=nums[i-1];
+            int suffix=sum-nums[i]-prefix;
+
+            if(suffix==prefix){
+                return i;
+            }
+        }
+        return -1;
+    }
+```
+
+
 
 
 
