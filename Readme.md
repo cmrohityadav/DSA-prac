@@ -1337,6 +1337,33 @@ int pivotIndex(vector<int>& nums) {
         return -1;
     }
 ```
+### Template
+- Question me `no. of subarray`/ `length of longest subarray`/`length of any subarray` with some condition (`Sum==k` , `sum%k==0`  etc)
+![alt text](/media/prefix_sum.png)
+![alt text](/media/prefix_sum_2.png)
+
+### Example L27 rewatch
+- Subarray Sum Equals K
+```cpp
+int subarraySum(vector<int>& nums, int k) {
+        int sum=0;
+        int result=0;
+        unordered_map<int,int>f;
+        f[0]=1;
+        
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+
+            int ques=sum-k
+
+            int freq=f[ques];
+
+            result+=freq;
+            f[sum]++;
+        }
+        return result;
+    }
+```
 
 
 
