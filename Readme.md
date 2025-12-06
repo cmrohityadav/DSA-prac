@@ -1364,6 +1364,31 @@ int subarraySum(vector<int>& nums, int k) {
         return result;
     }
 ```
+### Example
+- **Subarray Sums Divisible by K**
+- Given an integer array nums and an integer k, return the number of non-empty subarrays that have a sum divisible by k.
+
+```cpp
+int subarraysDivByK(vector<int>& a, int k) {
+        int n=a.size();
+        int res=0;
+        int sum=0;
+        unordered_map<int,int>f;
+        f[0]=1;
+
+        for(int i=0;i<n;i++){
+            sum+=a[i];
+            int rem=sum%k;
+
+            if(rem<0){ rem=rem+k;}
+
+            res+=f[rem];
+
+            f[rem]++;
+        }
+        return res;
+    }
+```
 
 
 
