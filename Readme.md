@@ -1296,7 +1296,72 @@ int smallestSumSubarray(vector<int>& a) {
 - Prefix Sum=Pahle Sum
 - Question Hmesha Array/Subarray ka hoga
 - ![Prefix Sum ](/media/pattern_prefix_sum.png)
-- Hum sliding window Tab use krte hai Jab element sirf positive ho
+
+- Array/Sub Array , 2 types
+1. Sum of left/right pivot/equilibrium
+2. Sum of Subarrays --> Negative  number
+- Hum sliding window Tab use krte hai Jab element sirf positive ho 
+- Kyu ki jab negative number hoga high++ par jaruri nhi hai result increase ho agar -ve num. hai to decrease bhi ho skta hai , same jab low o shrink krta hai to
+- Iske 3 types hai 
+1. 
+```bash
+sum(i....j)==k
+sum(i...j)%k=0 
+
+USE Hashmaps
+```
+2.  
+```bash
+Shortest Window with Sum>=K 
+
+USE  Deque
+```
+3. 
+```bash
+Range Sum
+
+USE Merge sort on prefix array
+```
+
+
+### Prefix and Suffix Sum
+- Prefix
+```cpp
+prefix[0]=0;
+prefix[1]=arr[0];
+prefix[2]=arr[0]+arr[1];
+prefix[3]=arr[0]+arr[1]+arr[2];
+prefix[4]=arr[0]+arr[1]+arr[2]+arr[3];
+
+// Pattern
+prefix[0]=0;
+prefix[1]=prefix[0];
+prefix[2]=prefix[1]+arr[1];
+prefix[3]=prefix[2]+arr[2];
+
+//General
+prefix[i]=Prefix[i-1]+arr[i-1];
+```
+- Suffix
+```cpp
+arr[]={0,1,2,3,4};
+
+suffix[4]=0;
+suffix[3]=arr[4];
+suffix[2]=arr[4]+arr[3];
+suffix[1]=arr[4]+arr[3]+arr[2];
+suffix[0]=arr[4]+arr[3]+arr[2]+arr[1];
+
+// Pattern
+suffix[4]=0;
+suffix[3]=arr[4];
+suffix[2]=suffix[3]+arr[3];
+suffix[1]=suffix[2]+arr[2];
+suffix[0]=suffix[1]+arr[1];
+
+//General
+Suffix[i]=Suffix[i+1]+a[i+1];
+```
 - Prefix[i]=Prefix[i-1]+a[i-1]; // (0,i-1) tak sum
 - Suffix[i]=Suffix[i+1]+a[i+1]; //( i+1, n-1 ) ka Sum
 
@@ -1342,26 +1407,51 @@ int pivotIndex(vector<int>& nums) {
 ![alt text](/media/prefix_sum.png)
 ![alt text](/media/prefix_sum_2.png)
 
-### Example L27 rewatch
-- Subarray Sum Equals K
+### Example 
+- **Subarray Sum Equals K**
+- O(n^2) solution
+```go
+func subarraySum(nums []int, k int) int {
+    count:=0;
+    for i:=0;i<len(nums);i++ {
+        sum:=0;
+        for j:=i;j<len(nums);j++{
+            sum+=nums[j];
+            if sum==k{
+                count++;
+            }
+        }
+    }
+    return count;
+}
+```
+- using Preffix Patterns
+```bash
+nums[0]+nums[1]+nums[2]+nums[3]+nums[4]+nums[5]=sum
+let nums[0]+nums[1]=sum-k
+so
+sum-k+x=sum
+x=sum-sum+k
+x=k
+```
 ```cpp
 int subarraySum(vector<int>& nums, int k) {
         int sum=0;
-        int result=0;
-        unordered_map<int,int>f;
-        f[0]=1;
-        
+        int countResult=0;
+        unordered_map<int,int>freq;
+        freq[0]=1;
+
         for(int i=0;i<nums.size();i++){
             sum+=nums[i];
 
-            int ques=sum-k
+            int sumMinusK=sum-k;
 
-            int freq=f[ques];
+            int tempCount=freq[sumMinusK];
+            countResult+=tempCount;
 
-            result+=freq;
-            f[sum]++;
+            freq[sum]++;
         }
-        return result;
+        return countResult;
     }
 ```
 ### Example
