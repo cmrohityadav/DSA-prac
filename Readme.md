@@ -1426,6 +1426,7 @@ func subarraySum(nums []int, k int) int {
 }
 ```
 - using Preffix Patterns
+-  O(n) solution
 ```bash
 nums[0]+nums[1]+nums[2]+nums[3]+nums[4]+nums[5]=sum
 let nums[0]+nums[1]=sum-k
@@ -1460,23 +1461,27 @@ int subarraySum(vector<int>& nums, int k) {
 
 ```cpp
 int subarraysDivByK(vector<int>& a, int k) {
-        int n=a.size();
-        int res=0;
-        int sum=0;
-        unordered_map<int,int>f;
-        f[0]=1;
+       int n=a.size();
+       int count=0;
+       int sum=0;
 
-        for(int i=0;i<n;i++){
-            sum+=a[i];
-            int rem=sum%k;
+       unordered_map<int,int>freq;
+       freq[0]=1;
 
-            if(rem<0){ rem=rem+k;}
+       for(int i=0;i<n;i++){
+        sum+=a[i];
+        int remainder=sum%k;
 
-            res+=f[rem];
-
-            f[rem]++;
+        if(remainder<0){
+            remainder=remainder+k;
         }
-        return res;
+
+        int tempCount=freq[remainder];
+        count+=tempCount;
+
+        freq[remainder]++;
+        }
+        return count;
     }
 ```
 
