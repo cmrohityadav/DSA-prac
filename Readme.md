@@ -1485,6 +1485,74 @@ int subarraysDivByK(vector<int>& a, int k) {
     }
 ```
 
+### Example 
+- **Contiguous Array**
+- Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1
+- Input: nums = [0,1,1,1,1,1,0,0,0]
+- Output: 6
+- Explanation: [1,1,1,0,0,0] is the longest contiguous subarray with equal number of 0 and 1.
+
+- Brute Force
+```go
+func findMaxLength(nums []int) int {
+    maxLen:=0;
+    n:=len(nums);
+
+    for i:=0;i<n;i++{
+        countZero:=0;
+        countOne:=0;
+        for j:=i;j<n;j++{
+            if nums[j]==0{
+                countZero++;
+            }else{
+                countOne++;
+            }
+
+            if(countZero==countOne){
+                len:=j-i+1;
+                if len> maxLen{
+                    maxLen=len;
+                }
+            }
+        }
+        
+    }
+    return maxLen;
+}
+```
+- O(n)
+
+```cpp
+int findMaxLength(vector<int>& nums) {
+       int maxLen=0;
+       int zero=0;
+       int one=0;
+
+       unordered_map<int,int>prevIndex;
+
+       for(int i=0;i<nums.size();i++){
+            if(nums[i]==0){
+                zero++;
+            }else{
+                one++;
+            }
+            int diff=zero-one;
+            if(diff==0){
+                maxLen=max(maxLen,i+1);
+                continue;
+            }
+
+            if(prevIndex.find(diff)==prevIndex.end()){
+                prevIndex[diff]=i;
+            }else{
+                int idx=prevIndex[diff];
+                int len=i-idx;
+                maxLen=max(maxLen,len);
+            }
+       }
+       return maxLen;
+    }
+```
 
 
 
