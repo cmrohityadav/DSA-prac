@@ -1554,6 +1554,16 @@ int findMaxLength(vector<int>& nums) {
     }
 ```
 
+| Prefix Sum |Kadanes|
+|------------|----------|
+|subarray |Subarray|
+|condition: sum<k or sum>k| sum: max,min|
+|shortest/longest/count| also product max/min |
+
+- Prefix Sum and Sliding window same type of Question Solve krte hai
+- But Negative element hoye to NO Sliding window
+
+
 
 
 
