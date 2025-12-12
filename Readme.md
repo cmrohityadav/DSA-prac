@@ -335,6 +335,7 @@ while(t != NULL){
 - [Fast & Slow pointers](#fast--slow-pointers)
 - [kadane's Algorithms](#kadane-algorithm)
 - [Prefix Sum](#prefix-sum)
+- [Merge Intervals](#merge-intervals)
 
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
@@ -1565,7 +1566,63 @@ int findMaxLength(vector<int>& nums) {
 
 
 
+## Merge Intervals
+- Range ([start,end])/Interval
+- Keywords in Questions: Overlap,conflict,merge,free time, simultaneous usage,room,load,cpu,meetings
 
+```bash
+(start,end)
+[1,4],[2.5],[3,4],[2,6],[5,8]
+start se sort kr lena hai
+
+(start1, end1) (start2,end2)
+
+merge hoga ya nhi?: end1>=start2
+start1<end1
+start2<end2
+
+start1<start2<end2
+
+merge: (start1,max(end1,end2))
+
+```
+
+### Example
+-  Merge Interval
+- Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input
+- Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+- Output: [[1,6],[8,10],[15,18]]
+- Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6]
+
+```cpp
+vector<vector<int>> merge(vector<vector<int>>& a) {
+        vector<vector<int>> res;
+
+        int n=a.size();
+        sort(a.begin(),a.end());
+
+        int start1=a[0][0];
+        int end1=a[0][1];
+     
+        for(int i=1;i<n;i++)
+        {
+            int start2=a[i][0];
+            int end2=a[i][1];
+
+            if(end1>=start2) //merge krna hai
+            {
+                start1=start1;
+                end1=max(end1,end2);
+                continue;
+            }
+            res.push_back({start1,end1});
+            start1=start2;
+            end1=end2;
+        }
+        res.push_back({start1,end1});
+        return res;
+    }
+```
 
 
 
