@@ -1623,6 +1623,60 @@ vector<vector<int>> merge(vector<vector<int>>& a) {
         return res;
     }
 ```
+### Example
+- **Insert Interval**
+- ou are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
+
+Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
+
+Return intervals after the insertion.
+
+Note that you don't need to modify intervals in-place. You can make a new array and return it.
+- Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
+- Output: [[1,5],[6,9]]
+
+```cpp
+vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
+       vector<vector<int>> tempIntervals;
+       vector<vector<int>> result;
+       if(intervals.size()<1){
+        result.push_back(newInterval);
+        return result;
+       }
+       bool isInserted=false;
+       for(int i=0;i<intervals.size();i++){
+                if(intervals[i][0]>newInterval[0] and isInserted==false){
+                    tempIntervals.push_back(newInterval);
+                    isInserted=true;   
+                }
+                tempIntervals.push_back(intervals[i]);
+       }
+
+       if (isInserted==false) {
+            tempIntervals.push_back(newInterval);
+        }
+
+       int start1=tempIntervals[0][0];
+       int end1=tempIntervals[0][1];
+
+       for(int i=1;i<tempIntervals.size();i++){
+        int start2=tempIntervals[i][0];
+        int end2=tempIntervals[i][1];
+
+        if(end1>=start2){
+            end1=max(end1,end2);
+            continue;
+        }
+        result.push_back({start1,end1});
+        start1=start2;
+        end1=end2;
+       }
+       result.push_back({start1,end1});
+        return result;
+    }
+```
+
+
 
 
 
