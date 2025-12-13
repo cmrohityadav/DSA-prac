@@ -336,7 +336,7 @@ while(t != NULL){
 - [kadane's Algorithms](#kadane-algorithm)
 - [Prefix Sum](#prefix-sum)
 - [Merge Intervals](#merge-intervals)
-
+- [Stack](#stack-pattern)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -1675,6 +1675,29 @@ vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInter
         return result;
     }
 ```
+
+
+## Stack Pattern
+- Dher
+- Ek Box jisme kitab rakh(any data) skte hai, sirf upar se opening hai
+- **LIFO** (Last In First Out)
+- **FILO** (First In Last Out)
+- main operation [push(),pop(),top(),size(),empty()]
+- **Type of Stock**
+1. Simple
+2. Monotonic (increasing/decreasing)
+3. Greedy Stack
+### Pattern to identify in Question
+- Kuchh items(`array/string`) diye ho 
+- left to right dekhna hai
+- `most recent element` 
+- `Matching/Cancelling/Cleaning`
+- Reverse
+### Universal Template 
+- Items hai
+- decide???: when to pop and what to pop??
+- when to push
+- result ko store kr lena hoga
 
 
 
