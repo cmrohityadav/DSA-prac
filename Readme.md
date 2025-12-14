@@ -7,8 +7,8 @@
 - [Time Complexity](#time-complexity)
 - [Space Complexity](#space-complexity)
 - [Array](#array)
-- [Linked List](#linked-listd)
-- []()
+- [Linked List](#linked-list)
+- [Stack](#stack)
 - []()
 - []()
 
@@ -325,7 +325,20 @@ while(t != NULL){
 
 
 
+## Stack
+- Stack ek aisa dabba samjho jisme cheezein upar se daali jaati hain aur upar se hi nikali jaati hain
+- Jo cheez sabse last mein daali, wahi sabse pehle niklegi
+- Major methods
+1. push()
+2. pop()
+3. top()
+4. size()
+5. empty()
+- It can be implemented in different ways
+1. Array Implementation
 
+
+2. Linked List Implementation
 
 
 
