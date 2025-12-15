@@ -1713,6 +1713,40 @@ vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInter
 - result ko store kr lena hoga
 
 
+### Example
+- Remove All Adjacent Duplicates in string
+
+```cpp
+string removeDuplicates(string s) {
+        int n=s.size();
+        stack<int>stk;
+        int i;
+        string res;
+
+        for(i=0;i<n;i++){
+            if(stk.empty()){
+                stk.push(s[i]);
+                continue;
+            }
+
+            if(stk.top()==s[i]){
+                stk.pop();
+                continue;
+            }
+            stk.push(s[i]);
+        }
+
+        while(!stk.empty()){
+            res.push_back(stk.top());
+            stk.pop();
+        }
+
+        reverse(res.begin(),res.end());
+        return res;
+    }
+```
+
+
 
 
 
