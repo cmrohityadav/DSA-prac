@@ -1777,6 +1777,39 @@ bool isValid(string s) {
 
 ```
 
+### Example
+- **Previous Greater Element**
+```cpp
+vector<int> preGreaterEle(vector<int>& nums) {
+        
+        int n=nums.size();
+        stack<int>stk;
+        vector<int>res(n);
+        res[0]=-1;
+        stk.push(nums[0]);
+
+        for(int i=1;i<n;i++){
+
+            while(!stk.empty() && stk.top()<=nums[i]){
+                stk.pop();
+            }
+            if(stk.empty()){
+                res[i]=-1;
+            }else{
+                res[i]=stk.top();
+            }
+            stk.push(nums[i]);
+        }
+        return res;
+    }
+```
+
+### Example 
+- **Next Greater Element**
+```cpp
+
+```
+
 
 
 
