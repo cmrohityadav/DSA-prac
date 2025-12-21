@@ -1867,8 +1867,56 @@ vector<int> nextGreaterElements(vector<int>& nums) {
     }
 
 ```
+### Example
+- **Remove All Adjacent Duplicates in String II**
+- You are given a string s and an integer k, a k duplicate removal consists of choosing k adjacent and equal letters from s and removing them, causing the left and the right side of the deleted substring to concatenate together.
+- We repeatedly make k duplicate removals on s until we no longer can.
 
+- Return the final string after all such duplicate removals have been made. It is guaranteed that the answer is unique.
+- Input: s = "deeedbbcccbdaa", k = 3
+- Output: "aa"
+- Explanation: 
+First delete "eee" and "ccc", get "ddbbbdaa"
+Then delete "bbb", get "dddaa"
+Finally delete "ddd", get "aa"
 
+```cpp
+string removeDuplicates(string s, int k) {
+        int n=s.size();
+        stack<pair<char,int>>stk;
+
+        for(int i=0;i<n;i++){
+            char c=s[i];
+            if(stk.empty()){
+                stk.push({c,1});
+                continue;
+            }
+
+            if(stk.top().first!=c){
+                stk.push({c,1});
+                continue;
+            }
+            if(stk.top().second<(k-1)){
+                pair<char,int>temp=stk.top();
+                stk.pop();
+                stk.push({temp.first,temp.second+1});
+                continue;
+            }
+            stk.pop();
+        }
+        string res="";
+        while(!stk.empty()){
+            pair<char,int>p=stk.top();
+            stk.pop();
+            while(p.second--){
+                res.push_back(p.first);
+            }
+
+        }
+        reverse(res.begin(),res.end());
+        return res;
+    }
+```
 
 
 
