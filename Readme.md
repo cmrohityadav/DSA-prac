@@ -350,6 +350,7 @@ while(t != NULL){
 - [Prefix Sum](#prefix-sum)
 - [Merge Intervals](#merge-intervals)
 - [Stack](#stack-pattern)
+- [Hashmaps](#hashmaps-pattern)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -1917,6 +1918,36 @@ string removeDuplicates(string s, int k) {
         return res;
     }
 ```
+
+## Hashmaps Pattern
+- A HashMap (also called a hash table or dictionary) is a data structure that stores `key–value pairs` and allows very fast lookup
+- **Key** → used to find the value,or identifier
+- **Value** → the data stored
+
+### Hashmap kab use krna hai?
+- Old data yaad rakhna hai kisi question me
+
+### Example
+- **First Unique Character in a String**
+- Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1
+```cpp
+int firstUniqChar(string s) {
+        unordered_map<char,int>freq;
+
+        for(int i=0;i<s.size();i++){
+            freq[s[i]]++;
+        }
+
+        for(int i=0;i<s.size();i++){
+            if(freq[s[i]]==1){
+               return i; 
+            }
+        }
+
+        return -1;
+    }
+```
+
 
 
 
