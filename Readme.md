@@ -1948,6 +1948,41 @@ int firstUniqChar(string s) {
     }
 ```
 
+### Example 
+- **Ransom Note**
+- Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+- Each letter in magazine can only be used once in ransomNote.
+
+```cpp
+bool canConstruct(string ransomNote, string magazine) {
+       unordered_map<char,int>needFreq;
+       unordered_map<char,int>haveFreq;
+
+       for(int i=0;i<ransomNote.size();i++){
+            needFreq[ransomNote[i]]++;
+       } 
+       for(int i=0;i<magazine.size();i++){
+         haveFreq[magazine[i]]++;
+       } 
+
+       for(auto itr:needFreq){
+            char needKey=itr.first;
+            int needValue=itr.second;
+
+            int haveValue=haveFreq[needKey];
+
+            if(needValue>haveValue){
+                return false;
+            }
+
+       }
+       return true;
+    }
+```
+
+
+
 
 
 
