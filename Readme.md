@@ -2011,6 +2011,43 @@ int maxNumberOfBalloons(string text) {
         return result;
     }
 ```
+### Example 
+- **Longest Palindrome**
+- Given a string s which consists of lowercase or uppercase letters, return the length of the longest palindrome that can be built with those letters.
+- Letters are case sensitive, for example, "Aa" is not considered a palindrome.
+
+```cpp
+int longestPalindrome(string s) {
+       unordered_map<char,int>freq;
+       for(int i=0;i<s.size();i++){
+            freq[s[i]]++;
+       }
+        int result=0;
+        bool isOdd=false;
+       for(auto itr:freq){
+            if(itr.second%2==0){
+                result+=itr.second;
+            }else{
+                isOdd=true;
+            }
+       }
+
+       if(isOdd==false){
+            return result;
+       }
+
+       for(auto itr:freq){
+           
+            if(itr.second%2==1){
+                int value=itr.second;
+                result+=value-1;
+            }
+       }
+
+       return result+1;
+    }
+```
+
 
 
 
