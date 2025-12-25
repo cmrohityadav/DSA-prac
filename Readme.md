@@ -1981,6 +1981,37 @@ bool canConstruct(string ransomNote, string magazine) {
     }
 ```
 
+### Example
+- **Maximum Number of Balloons**
+- Given a string text, you want to use the characters of text to form as many instances of the word "balloon" as possible
+- You can use each character in text at most once. Return the maximum number of instances that can be formed.
+
+```cpp
+int maxNumberOfBalloons(string text) {
+        unordered_map<char,int>needFreq;
+        unordered_map<char,int>haveFreq;
+        int result=INT_MAX;
+        needFreq['b']=1;
+        needFreq['a']=1;
+        needFreq['l']=2;
+        needFreq['o']=2;
+        needFreq['n']=1;
+        for(int i=0;i<text.size();i++){
+            haveFreq[text[i]]++;
+        }
+
+        for(auto itr:needFreq){
+            char needKey=itr.first;
+            int needValue=itr.second;
+            int haveValue= haveFreq[needKey];
+            int times=haveValue/needValue;
+            result=min(result,times);
+        }
+
+        return result;
+    }
+```
+
 
 
 
