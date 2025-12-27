@@ -351,6 +351,7 @@ while(t != NULL){
 - [Merge Intervals](#merge-intervals)
 - [Stack](#stack-pattern)
 - [Hashmaps](#hashmaps-pattern)
+- [In-place Reversal of a LinkedList](#in-place-reversal-of-a-linkedlist)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -2048,6 +2049,24 @@ int longestPalindrome(string s) {
     }
 ```
 
+## In-place Reversal of a LinkedList
+
+### Example
+- **Reverse Linked List**
+- Given the head of a singly linked list, reverse the list, and return the reversed list
+```cpp
+ListNode* reverseList(ListNode* head) {
+        ListNode* curr=head;
+        ListNode* prev=NULL;
+        while(curr!=NULL){
+            ListNode* next = curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
+        }
+        return prev;
+    }
+```
 
 
 
