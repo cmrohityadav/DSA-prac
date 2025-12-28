@@ -335,7 +335,7 @@ while(t != NULL){
 4. size()
 5. empty()
 - It can be implemented in different ways
-1. **Array Implementation**
+1. **Array Implementation [using Vector]**
 ```cpp
 #include<iostream>
 #include<vector>
@@ -398,7 +398,41 @@ int main(){
 
 
 2. **Linked List Implementation**
+```cpp
+#include<iostream>
+#include<list>
 
+class Stack{
+    std::list<int>ll;
+
+public:
+
+void push(int val){
+    ll.push_front(val);
+}
+
+void pop(){
+    ll.pop_front();
+}
+
+int top(){
+  return  ll.front();
+}
+bool empty(){
+    return ll.size()==0;
+}
+
+};
+int main(){
+    Stack stk ;
+    stk.push(10);
+    stk.push(20);
+    while(!stk.empty()){
+        std::cout<<stk.top()<<std::endl;
+        stk.pop();
+    }
+}
+```
 
 
 # Patterns
