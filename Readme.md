@@ -445,6 +445,7 @@ int main(){
 - [Stack](#stack-pattern)
 - [Hashmaps](#hashmaps-pattern)
 - [In-place Reversal of a LinkedList](#in-place-reversal-of-a-linkedlist)
+- [Binary Search Algorithm Pattern](#Binary-Search-Algorithm-Pattern)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -2204,6 +2205,19 @@ ListNode* reverseBetween(ListNode* head, int left, int right) {
         return prev;
     }
 ```
+
+
+
+## Binary Search Algorithm Pattern
+- Guess/Trial/error/Tukka
+- Jo bhi question me find out krna hoga usko guess krege jaise index/number/regulator/no. of cows/ speed/no. of days/no. of people etc
+
+### Temaplate
+1. Single chiz [index, optimization,
+]
+2. Guess --> kr skte hai
+3. Guess ----->> Answer [monotonic hona chahiye]
+
 
 
 
