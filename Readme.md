@@ -2218,6 +2218,31 @@ ListNode* reverseBetween(ListNode* head, int left, int right) {
 2. Guess --> kr skte hai
 3. Guess ----->> Answer [monotonic hona chahiye]
 
+### Example
+- Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1
+```cpp
+int search(vector<int>& nums, int target) {
+        int low=0;
+        int high=nums.size()-1;
+
+        while(low<=high){
+            int guessIndex=(low+high)/2;
+
+            if(nums[guessIndex]==target){
+                return guessIndex;
+            }
+            if(nums[guessIndex]<target){
+                low=guessIndex+1;
+            }else{
+                high=guessIndex-1;
+            }
+        }
+        return -1;
+    }
+```
+
+
+
 
 
 
