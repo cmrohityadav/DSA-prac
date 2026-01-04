@@ -2264,6 +2264,51 @@ int findCeil(vector<int>& arr, int x) {
     }
 ```
 
+### Example
+- **Find First and Last Position of Element in Sorted Array**
+- Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value
+- If target is not found in the array, return [-1, -1].
+- You must write an algorithm with O(log n) runtime complexity.
+```cpp
+vector<int> searchRange(vector<int>& nums, int target) {
+        int low=0;
+        int high =nums.size()-1;
+        int first=-1;
+        int last=-1;
+        while(low<=high){
+            int guessIndex=(low+high)/2;
+
+            if(nums[guessIndex]<target){
+                low=guessIndex+1;
+            }else if(nums[guessIndex]>target){
+                high=guessIndex-1;
+            }else{//equal
+                first=guessIndex;
+                high=guessIndex-1;
+            } 
+        }
+
+
+        low=0;
+        high =nums.size()-1;
+        while(low<=high){
+            int guessIndex=(low+high)/2;
+
+            if(nums[guessIndex]<target){
+                low=guessIndex+1;
+            }else if(nums[guessIndex]>target){
+                high=guessIndex-1;
+            }else{//equal
+                last=guessIndex;
+                low=guessIndex+1;
+            } 
+        }
+
+        return {first,last};
+    }
+
+```
+
 
 
 
