@@ -2241,6 +2241,29 @@ int search(vector<int>& nums, int target) {
     }
 ```
 
+### Example
+- **Ceil in a Sorted Array**
+- Given a sorted array arr[] and an integer x, find the index (0-based) of the smallest element in arr[] that is greater than or equal to x. This element is called the ceil of x. If such an element does not exist, return -1
+```cpp
+int findCeil(vector<int>& arr, int x) {
+        int low=0;
+        int high=arr.size()-1;
+        int resultIndex=-1;
+        
+        while(low<=high){
+            int guessIndex=(low+high)/2;
+            
+            if(arr[guessIndex]<x){
+                low=guessIndex+1;
+            }else{
+                resultIndex=guessIndex;
+                high=guessIndex-1;
+            }
+        }
+        return resultIndex;
+    }
+```
+
 
 
 
