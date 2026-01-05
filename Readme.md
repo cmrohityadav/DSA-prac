@@ -2211,7 +2211,8 @@ ListNode* reverseBetween(ListNode* head, int left, int right) {
 ## Binary Search Algorithm Pattern
 - Guess/Trial/error/Tukka
 - Jo bhi question me find out krna hoga usko guess krege jaise index/number/regulator/no. of cows/ speed/no. of days/no. of people etc
-
+- [less, less, less, less, normal normal,equal,equal, high,high]
+- [chadai,chadai,chadai,chadai,dhalan,dhalan,dhalan]
 ### Temaplate
 1. Single chiz [index, optimization,
 ]
@@ -2308,6 +2309,36 @@ vector<int> searchRange(vector<int>& nums, int target) {
     }
 
 ```
+
+### Example
+- **Peak Index in a Mountain Array**
+- You are given an integer mountain array arr of length n where the values increase to a peak element and then decrease.
+- Return the index of the peak element.
+- Your task is to solve it in O(log(n)) time complexity.
+```cpp
+int peakIndexInMountainArray(vector<int>& arr) {
+        int peakIndex=-1;
+        int low=0;
+        int high=arr.size()-1;
+
+        while(low<=high){
+            int guessIndex=(low+high)/2;
+
+            if(arr[guessIndex]<arr[guessIndex+1]){
+                //chadan
+                low=guessIndex+1;
+            }else{
+                peakIndex=guessIndex;
+                high=guessIndex-1;
+            }
+        }
+        return peakIndex;
+    }
+```
+
+ 
+
+
 
 
 
