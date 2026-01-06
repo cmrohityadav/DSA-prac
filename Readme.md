@@ -2336,6 +2336,29 @@ int peakIndexInMountainArray(vector<int>& arr) {
     }
 ```
 
+### Example
+- **Find Minimum in Rotated Sorted Array**
+```cpp
+int findMin(vector<int>& nums) {
+        int low=0;
+        int minIndex=INT_MAX;
+        int high=nums.size()-1;
+        int size=high;
+
+        while(low<=high){
+            int guessIndex=(low+high)/2;
+
+            if(nums[guessIndex]>nums[size]){
+                low=guessIndex+1;
+            }else{
+                minIndex=guessIndex;
+                high=guessIndex-1;
+            }
+        }
+        return nums[minIndex];
+    }
+```
+
  
 
 
