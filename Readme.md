@@ -2216,7 +2216,8 @@ ListNode* reverseBetween(ListNode* head, int left, int right) {
 ### Temaplate
 1. Single chiz [index, optimization,
 ]
-2. Guess --> kr skte hai
+2. kya optimization krna hai ?[minimise/maximize]
+3. Guess --> kr skte hai? to uska answer O(1)/O(n) me ho
 3. Guess ----->> Answer [monotonic hona chahiye]
 
 ### Example
@@ -2357,6 +2358,99 @@ int findMin(vector<int>& nums) {
         }
         return nums[minIndex];
     }
+```
+
+### Example
+- **Search in Rotated Sorted Array**
+
+```cpp
+int search(vector<int>& nums, int target) {
+        int n=nums.size();
+        int low=0;
+        int high=n-1;
+        
+        while(low<=high){
+            int guessIndex=(low+high)/2;
+
+            if(nums[guessIndex]==target){
+                return guessIndex;
+            }
+
+            if(nums[guessIndex]>nums[n-1]){
+                //part 1
+                if(nums[guessIndex]<target){
+                    low=guessIndex+1; //right
+                }else{ //nums[guessIndex]>target
+                    if(nums[0]>target){//right
+                        low=guessIndex+1;
+                    }else{//left
+                        high=guessIndex-1;
+                    }
+                }
+            }else{
+                if(nums[guessIndex]>target){
+                    high=guessIndex-1; 
+                }else{
+                    if(nums[n-1]<target){
+                        high=guessIndex-1;
+                    }else{
+                        low=guessIndex+1;
+                    }
+                }
+            }
+            
+        }
+        return -1;
+    }
+
+```
+
+
+### Example
+- **Koko Eating Bananas**
+- Koko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours
+- Input: piles = [3,6,7,11], h = 8
+- Output: 4
+
+```cpp
+class Solution {
+public:
+   long long func(vector<int>&a,int n,int speed){
+        long long h=0;
+        for(int i=0;i<n;i++){
+            h=h+a[i]/speed;
+            if(a[i]%speed!=0){
+                h++;
+            }   
+        }
+        return h;
+    }
+    int minEatingSpeed(vector<int>& piles, int h) {
+        int n=piles.size();
+        int low=1;
+        int high=INT_MIN;
+        for(int i=0;i<n;i++){
+            high=max(high,piles[i]);
+        }
+
+        int res=-1;
+
+        while(low<=high){
+            // int guess=(low+high)/2;
+            int guess = low + (high - low) / 2;
+            long long hr=func(piles,n,guess);
+
+            if(hr>h){
+                //NO
+                low=guess+1;
+            }else{
+                res=guess;
+                high=guess-1;
+            }
+        }
+        return res;
+    }
+};
 ```
 
  
