@@ -11,6 +11,8 @@
 - [Stack](#stack)
 - []()
 - []()
+- []()
+- []()
 
 
 ## Data Structures 
@@ -446,6 +448,7 @@ int main(){
 - [Hashmaps](#hashmaps-pattern)
 - [In-place Reversal of a LinkedList](#in-place-reversal-of-a-linkedlist)
 - [Binary Search Algorithm Pattern](#Binary-Search-Algorithm-Pattern)
+- [Heap Pattern](#heap-pattern)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -2452,6 +2455,51 @@ public:
     }
 };
 ```
+
+
+## Heap Pattern
+- also `Priority Queue`
+### Min Heap
+- sabse SMALLEST element find krna
+#### Time complexity
+- top me kya hai `O(1)`
+- Insert anything  `O(logn)`
+- Delete `O(logn)`
+
+### Max Heap
+- sabse BIGGEST element find krna
+- Insert anything  `O(logn)`
+- Delete `O(logn)`
+
+```c++
+// declaration
+priority_queue<int>pq; //Max heap by default
+
+priority_queue<int,vector<int>,greater<int>>pq; //min heap
+
+//Inseration
+pq.push(anyData);
+
+//deleation
+pq.pop();
+
+//top element
+pq.top();
+
+//checking empty or not
+pq.empty();
+
+//size
+pq.size();
+```
+### Pattern
+- Kth smallest/largest
+- Top K
+- Closest/ further
+- Min/max at every step 
+- merge Sorted things
+- Stream of data
+- Rearrange while keeping best elements
 
  
 
