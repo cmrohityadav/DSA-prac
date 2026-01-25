@@ -2501,8 +2501,38 @@ pq.size();
 - Stream of data
 - Rearrange while keeping best elements
 
+### Phase 1
+- Top K
+- Kth Smallest
+- kth largest
+- Best 'K'
+- Worst 'K'
  
-
+### Example
+- Given an integer array arr[] and an integer k, your task is to find and return the kth smallest element in the given array
+```c++
+int kthSmallest(vector<int> &arr, int k) {
+        
+        priority_queue<int>pq;
+        
+        int iSize=arr.size();
+        
+        for(int i=0;i<k;i++){
+            pq.push(arr[i]);
+        }
+        
+        for(int i=k;i<iSize;i++){
+            if(arr[i]>=pq.top()){
+                continue;
+            }else{
+                pq.pop();
+                pq.push(arr[i]);
+            }
+        }
+        
+        return pq.top();
+    }
+```
 
 
 
