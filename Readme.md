@@ -2533,9 +2533,34 @@ int kthSmallest(vector<int> &arr, int k) {
         return pq.top();
     }
 ```
+### Pair priority queue
+```c++
+priority_queue<pair<int,string>,vector<pair<int,string>>,cmp>pq;
 
+IS  a worse than b?
+yes: b goes on top
+NO: a goes on top 
 
+struct cmp {
+    bool operator()(const std::pair<int, std::string>& a,
+                    const std::pair<int, std::string>& b) const {
+        if (a.first != b.first)
+            return a.first > b.first; //min heap
+        return a.second > b.second; //min heap
+    }
+};
 
+struct cmp {
+    bool operator()(const std::pair<int, std::string>& a,
+                    const std::pair<int, std::string>& b) const {
+        if (a.first != b.first)
+            return a.first < b.first; //max heap
+        return a.second < b.second; //max heap
+    }
+};
+```
+
+ 
 
 
 
