@@ -449,6 +449,7 @@ int main(){
 - [In-place Reversal of a LinkedList](#in-place-reversal-of-a-linkedlist)
 - [Binary Search Algorithm Pattern](#Binary-Search-Algorithm-Pattern)
 - [Heap Pattern](#heap-pattern)
+- [Recursion Pattern](#recursion-pattern)
 ## Two Pointers
 - Question `Array` ya `LinkList`  hi hog 80% case me
 - Tree,Graph,Stack,DP,Queue isme `90%` case me Two `Pointers nhi lagta`
@@ -2560,6 +2561,31 @@ struct cmp {
 };
 ```
 
+
+
+## Recursion Pattern
+```bash
+# Base Case (Stopping Condition)
+- Sabse chhota / simplest case jiska answer hume already pata hota hai.
+- Ye recursion ko stop karta hai.
+- Agar base case nahi hoga → infinite recursion ho sakta hai
+- eg. If n == 1, return 1
+
+
+# Small Problem (Recursive Call)
+- Bade problem ko tod kar chhota same type ka problem bana do.
+- Function khud ko call karega smaller input ke saath
+- eg. ans= sum(n-1)
+
+# Return the Answer (Self Work)
+- Recursive call se jo result aata hai, use combine karke final result return karo
+- finalAns=n+ans
+- return finalAns
+
+```
+- **Base Case (Stopping Condition)**: sabse chhota result jo pata hai
+-  Chhota sa problem solution
+- return result
  
 
 
