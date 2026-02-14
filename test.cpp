@@ -2,22 +2,20 @@
 #include<vector>
 using namespace std;
 
-void printNumberOneToN(int n){
+void printNumberNToOne(int n){
     //base case
     if(n==0){
         return;
     }
 
-    // recursion call
-    printNumberOneToN(n-1);
-
-    // self work | logic
+    // self work
     cout<<n<<endl;
-    return;
+    // recursion call
+    printNumberNToOne(n-1);
 }
 int main()
 {
-    printNumberOneToN(10);
+    printNumberNToOne(10);
 
     return 0;
 }

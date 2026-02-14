@@ -2589,6 +2589,8 @@ struct cmp {
 - return finalAns
 
 ```
+- `Head Recursion` (Self work pehle)
+- `Tail Recursion` (Self work baad mein)
 ### Example
 - find max element in array
 ```cpp
@@ -2637,6 +2639,21 @@ void printNumberOneToN(int n){
     // self work | logic
     cout<<n<<endl;
     return;
+}
+```
+### Example
+- Print numbers N to 1
+```cpp
+void printNumberNToOne(int n){
+    //base case
+    if(n==0){
+        return;
+    }
+
+    // self work
+    cout<<n<<endl;
+    // recursion call
+    printNumberNToOne(n-1);
 }
 ```
  
