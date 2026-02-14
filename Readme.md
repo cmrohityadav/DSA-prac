@@ -2621,6 +2621,24 @@ int main()
     return 0;
 }
 ```
+
+### Example
+- Print numbers 1 to N
+```cpp
+void printNumberOneToN(int n){
+    //base case
+    if(n==0){
+        return;
+    }
+
+    // recursion call
+    printNumberOneToN(n-1);
+
+    // self work | logic
+    cout<<n<<endl;
+    return;
+}
+```
  
 
 

@@ -2,27 +2,22 @@
 #include<vector>
 using namespace std;
 
-int maxElement(vector<int>& num,int n){
-
-    //base case 
-    if(n==1){
-        return num[0];
+void printNumberOneToN(int n){
+    //base case
+    if(n==0){
+        return;
     }
 
-    //recursive call make small problem solve
-    int result=maxElement(num,n-1);
+    // recursion call
+    printNumberOneToN(n-1);
 
-    // self work |logic|  return 
-    int currentValue=num[n-1];
-    int maxi = max(result,currentValue);
-    return maxi;
-
+    // self work | logic
+    cout<<n<<endl;
+    return;
 }
 int main()
 {
-    vector<int>v{0,8,6,5,7,4,2};
-
-    std::cout<<maxElement(v,v.size());
+    printNumberOneToN(10);
 
     return 0;
 }
