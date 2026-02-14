@@ -2673,6 +2673,24 @@ int sumOfNNumbers(int n){
     return sum;
 }
 ```
+
+### Example
+- Factorial of N
+```cpp
+int factorialOfN(int n){
+    //base case
+    if(n==1){
+       return 1;
+    }
+
+    //recursion call
+    int product=factorialOfN(n-1);
+
+    //self work
+    return product*n;
+   
+}
+```
  
 
 

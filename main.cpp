@@ -2,22 +2,22 @@
 #include<vector>
 using namespace std;
 
-int sumOfNNumbers(int n){
+int factorialOfN(int n){
     //base case
     if(n==1){
-        return 1;
+       return 1;
     }
 
     //recursion call
-    int sumFromNMinusOne=sumOfNNumbers(n-1);
+    int product=factorialOfN(n-1);
 
     //self work
-    int sum=sumFromNMinusOne+n;
-    return sum;
+    return product*n;
+   
 }
 int main()
 {
-    cout<<sumOfNNumbers(5);
+    cout<<factorialOfN(5);
 
     return 0;
 }
