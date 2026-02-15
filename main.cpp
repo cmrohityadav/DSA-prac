@@ -1,23 +1,33 @@
-#include <iostream>
-#include<vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-int factorialOfN(int n){
-    //base case
-    if(n==1){
-       return 1;
+void fun(vector<int> &a, int n, int idx, vector<int> &tmp) {
+    // Base case
+    if (idx == n) {
+        for (int x : tmp) {
+            cout << x << " ";
+        }
+        cout << endl;
+        return;
     }
 
-    //recursion call
-    int product=factorialOfN(n-1);
+    // Not take current element
+    fun(a, n, idx + 1, tmp);
 
-    //self work
-    return product*n;
-   
+    // Take current element
+    tmp.push_back(a[idx]);
+    fun(a, n, idx + 1, tmp);
+
+    // Backtrack
+    tmp.pop_back();
 }
-int main()
-{
-    cout<<factorialOfN(5);
+
+int main() {
+    vector<int> a = {1, 2, 3};
+    int n = a.size();
+    vector<int> tmp;
+
+    fun(a, n, 0, tmp);
 
     return 0;
 }
