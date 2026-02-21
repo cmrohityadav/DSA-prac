@@ -2608,7 +2608,7 @@ int maxElement(vector<int>& num,int n){
     //recursive call |  make small problem solve
     int result=maxElement(num,n-1);
 
-    // self work |logic|  return 
+    // self work |logic|  return | Work done at current level
     int currentValue=num[n-1];
     int maxi = max(result,currentValue);
     return maxi;
@@ -2720,7 +2720,30 @@ int  fibonacci(int n){
 }
 
 ```
+### Example 
+- Palindrome String
+```cpp
+bool isPal(std::string& s,int low,int high){
+        //base case
+        int len=high-low+1;
+        if(len==0 || len==1){
+            return true;
+        }
+        
+        //self work
+        if(s[low]!=s[high]){
+            return false;
+        }
+        
+        //recursion call
+        return isPal(s,low+1,high-1);
+    }
+    bool isPalindrome(string& s) {
+        if (s.empty()) return true;
+        return isPal(s, 0, s.size() - 1);
+    }
 
+```
 
 
 
