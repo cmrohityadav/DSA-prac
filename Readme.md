@@ -2758,7 +2758,21 @@ int sumOfNumbers(int n){
     return lastDigit+sum;
 }
 ```
-
+### Example
+- array sorted or not
+```cpp
+bool kyaArraySortedHai(vector<int>& arr,int i,int size){
+        if(i==size || i==(size-1)){
+           return true; 
+        } 
+        
+        if(arr[i]>arr[i+1]){
+            return false;
+        }
+        
+        return kyaArraySortedHai(arr,i+1,size);
+    }
+```
 
 
 
