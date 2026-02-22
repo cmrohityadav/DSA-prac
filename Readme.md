@@ -2774,6 +2774,23 @@ bool kyaArraySortedHai(vector<int>& arr,int i,int size){
     }
 ```
 
+### Example
+- Remove all occurrences of a character in a string
+```cpp
+string removeChar(string& s,int i,int n,char c){
+        if(i==n){
+            return "";
+        }
+        
+        string ans=removeChar(s,i+1,n,c);
+        if(s[i]==c){
+            return ans;
+        }
+        
+        return s[i]+ans;
+    }
+```
+
 
 
 
