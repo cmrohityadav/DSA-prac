@@ -2833,6 +2833,41 @@ int main() {
 }
 
 ```
+
+
+### Example 
+- Generate Parentheses
+- Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses
+- Input: n = 3
+- Output: ["((()))","(()())","(())()","()(())","()()()"]
+```cpp
+void func(vector<string>& res,string& temp,int n,int open,int close){
+        if(open==n && close==n){
+            res.push_back(temp);
+            return;
+        }
+        
+        if(open<n){
+            temp.push_back('(');
+            func(res,temp,n,open+1,close);
+            temp.pop_back();
+        }
+
+        if(close<open){
+            temp.push_back(')');
+            func(res,temp,n,open,close+1);
+            temp.pop_back();
+        }
+
+        return;
+    }
+    vector<string> generateParenthesis(int n) {
+        vector<string>result;
+        string temp = "";
+        func(result,temp,n,0,0);
+        return result;
+    }
+```
  
 
 
