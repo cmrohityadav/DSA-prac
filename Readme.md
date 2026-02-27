@@ -2797,6 +2797,30 @@ string removeChar(string& s,int i,int n,char c){
 
 
 ## Backtracking
+### Template
+```bash
+1. Identify stages
+
+2. One by one Stages (index/number)
+
+3. Choices kya hai?
+- kya kr skte hai?
+- Jo mann kre
+- Condition
+
+4. Make one choice
+- dairy me wo choice ko likh lijiye
+- aage wale stage pe chale jaiye
+- Diary ko reverse kr do
+
+5. Saare choices possible liye stage 4 repate kre 
+
+6. Jab saare stages khatam ho jaye
+- Apni diary dekhiye
+- Print kariye
+- Sum of all possible
+```
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
