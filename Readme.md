@@ -2820,7 +2820,18 @@ string removeChar(string& s,int i,int n,char c){
 - Print kariye
 - Sum of all possible
 ```
+- Example
 
+```bash
+                    (start)
+                   /       \
+               d1=L         d1=R
+              /     \       /     \
+         d2=L       d2=R  d2=L    d2=R
+          /            \    /         \
+      [L,L]         [L,R] [R,L]     [R,R]
+
+```
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
