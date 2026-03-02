@@ -2833,6 +2833,29 @@ string removeChar(string& s,int i,int n,char c){
 
 ```
 ```cpp
+void fun(vector<int>&a,int n,int idx,vector<string>&s){
+    //step 6
+    if(idx==n){
+        print(diary)
+        return
+    }
+
+    //left choice
+    diary.push_back("left");
+    fun(a,n,idx+1,diary);
+    diary.pop_back();
+
+    //right choice
+    diary.push_back("right");
+    fun(a,n,idx+1,diary);
+    diary.pop_back();
+
+    return;
+
+}
+
+```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
